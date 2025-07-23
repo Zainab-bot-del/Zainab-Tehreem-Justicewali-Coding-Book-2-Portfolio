@@ -3,131 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Twitter Clone - Orange Theme</title>
+  <title>Twitter Clone</title>
   <style>
-    * {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6ecf0;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #fff3e0;
-      color: #333;
     }
 
     header {
-      background-color: #ff9800;
-      color: white;
+      background-color: #1DA1F2;
       padding: 1rem;
+      color: white;
       text-align: center;
       font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    nav {
-      background-color: #ffa726;
-      display: flex;
-      justify-content: space-around;
-      padding: 0.75rem;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
     }
 
     .container {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .feed {
-      width: 600px;
-    }
-
-    .tweet-box {
+      max-width: 600px;
+      margin: 2rem auto;
       background: white;
-      padding: 15px;
+      padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    .tweet-box textarea {
+    textarea {
       width: 100%;
       height: 80px;
-      border: none;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      border-radius: 5px;
       resize: none;
       font-size: 1rem;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
     }
 
-    .tweet-box button {
-      background-color: #ff9800;
+    button {
+      margin-top: 0.5rem;
+      background-color: #1DA1F2;
       color: white;
       border: none;
-      padding: 10px 20px;
-      margin-top: 10px;
-      border-radius: 5px;
+      padding: 0.6rem 1rem;
+      border-radius: 25px;
+      font-weight: bold;
       cursor: pointer;
-      float: right;
     }
 
     .tweet {
-      background: white;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .tweet .name {
-      font-weight: bold;
-      color: #ff6f00;
-    }
-
-    .tweet .content {
-      margin-top: 8px;
+      background-color: #f5f8fa;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 0.7rem;
+      margin-top: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    Twitter Clone
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Explore</a>
-    <a href="#">Notifications</a>
-    <a href="#">Messages</a>
-  </nav>
+  <header>Twitter Clone</header>
 
   <div class="container">
-    <div class="feed">
-      <div class="tweet-box">
-        <textarea placeholder="What's happening?"></textarea>
-        <button>Tweet</button>
-      </div>
+    <textarea placeholder="What's happening?"></textarea>
+    <button>Tweet</button>
 
-      <div class="tweet">
-        <div class="name">@orangeFan</div>
-        <div class="content">Loving the orange theme! 🍊 #FreshDesign</div>
-      </div>
-
-      <div class="tweet">
-        <div class="name">@designerGirl</div>
-        <div class="content">Working on a Twitter clone! Stay tuned 😎</div>
-      </div>
-
-    </div>
+    <div class="tweet">🚀 Hello world! This is your first tweet.</div>
   </div>
 
 </body>
