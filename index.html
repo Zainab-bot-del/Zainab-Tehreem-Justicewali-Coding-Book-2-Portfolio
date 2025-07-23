@@ -1,74 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Twitter Clone</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e6ecf0;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-    header {
-      background-color: #1DA1F2;
-      padding: 1rem;
-      color: white;
-      text-align: center;
-      font-size: 1.5rem;
-    }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
 
-    .container {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+        .sidebar-left {
+            width: 20%;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
 
-    textarea {
-      width: 100%;
-      height: 80px;
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      border-radius: 5px;
-      resize: none;
-      font-size: 1rem;
-    }
+        .sidebar-left ul {
+            list-style: none;
+            padding: 0;
+        }
 
-    button {
-      margin-top: 0.5rem;
-      background-color: #1DA1F2;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+        .sidebar-left ul li {
+            margin-bottom: 20px;
+        }
 
-    .tweet {
-      background-color: #f5f8fa;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 0.7rem;
-      margin-top: 1rem;
-    }
-  </style>
+        .sidebar-left ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .tweet-btn {
+            background-color: #1DA1F2;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .tweet {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .tweet-content {
+            flex-grow: 1;
+        }
+
+        .username {
+            font-weight: bold;
+        }
+
+        .tweet-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .sidebar-right {
+            width: 30%;
+            padding: 20px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+        }
+
+        .trends, .who-to-follow {
+            margin-top: 20px;
+        }
+
+        .trends ul, .who-to-follow ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .trends ul li, .who-to-follow ul li {
+            margin-bottom: 10px;
+        }
+
+        .trends ul li a, .who-to-follow ul li span {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-
-  <header>Twitter Clone</header>
-
-  <div class="container">
-    <textarea placeholder="What's happening?"></textarea>
-    <button>Tweet</button>
-
-    <div class="tweet">🚀 Hello world! This is your first tweet.</div>
-  </div>
-
+    <div class="container">
+        <div class="sidebar-left">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Bookmarks</a></li>
+                <li><a href="#">Lists</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">More</a></li>
+            </ul>
+            <button class="tweet-btn">Tweet</button>
+        </div>
+        <div class="main-content">
+            <div class="tweet">
+                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+                <div class="tweet-content">
+                    <span class="username">Username</span>
+                    <p>This is a sample tweet.</p>
+                    <img src="sunset.jpg" alt="Sunset Image" class="tweet-image">
+                </div>
+            </div>
+            <!-- More tweets can be added here -->
+        </div>
+        <div class="sidebar-right">
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="trends">
+                <h3>Trends for you</h3>
+                <ul>
+                    <li><a href="#">Trend 1</a></li>
+                    <li><a href="#">Trend 2</a></li>
+                    <li><a href="#">Trend 3</a></li>
+                </ul>
+            </div>
+            <div class="who-to-follow">
+                <h3>Who to follow</h3>
+                <ul>
+                    <li>
+                        <img src="profile1.jpg" alt="Profile 1">
+                        <span>Username 1</span>
+                    </li>
+                    <li>
+                        <img src="profile2.jpg" alt="Profile 2">
+                        <span>Username 2</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
