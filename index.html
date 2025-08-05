@@ -1,170 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Clone</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Twitter</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .container {
-            display: flex;
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e6ecf0;
+      color: #14171a;
+    }
 
-        .sidebar-left {
-            width: 20%;
-            padding: 20px;
-            border-right: 1px solid #ddd;
-        }
+    header {
+      background-color: #1da1f2;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
 
-        .sidebar-left ul {
-            list-style: none;
-            padding: 0;
-        }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 20px auto;
+      gap: 20px;
+      padding: 10px;
+    }
 
-        .sidebar-left ul li {
-            margin-bottom: 20px;
-        }
+    /* Profile */
+    .profile {
+      flex: 1 1 250px;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
 
-        .sidebar-left ul li a {
-            text-decoration: none;
-            color: #333;
-        }
+    .profile img {
+      border-radius: 50%;
+      width: 100px;
+      margin-bottom: 10px;
+    }
 
-        .tweet-btn {
-            background-color: #1DA1F2;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-        }
+    .profile button {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        .main-content {
-            width: 50%;
-            padding: 20px;
-        }
+    /* Feed */
+    .feed {
+      flex: 2 1 600px;
+    }
 
-        .tweet {
-            display: flex;
-            margin-bottom: 20px;
-        }
+    .tweet-box {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
 
-        .profile-pic {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
+    .tweet-box textarea {
+      width: 100%;
+      padding: 10px;
+      resize: none;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-        .tweet-content {
-            flex-grow: 1;
-        }
+    .tweet-box button {
+      margin-top: 10px;
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      float: right;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        .username {
-            font-weight: bold;
-        }
+    .tweet {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
 
-        .tweet-image {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
+    .tweet-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
 
-        .sidebar-right {
-            width: 30%;
-            padding: 20px;
-        }
+    .tweet-header img {
+      border-radius: 50%;
+      width: 50px;
+    }
 
-        .search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 20px;
-        }
+    .tweet-actions {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
 
-        .trends, .who-to-follow {
-            margin-top: 20px;
-        }
+    .tweet-actions button {
+      background: none;
+      border: none;
+      color: #1da1f2;
+      cursor: pointer;
+      font-size: 16px;
+    }
 
-        .trends ul, .who-to-follow ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .trends ul li, .who-to-follow ul li {
-            margin-bottom: 10px;
-        }
-
-        .trends ul li a, .who-to-follow ul li span {
-            text-decoration: none;
-            color: #333;
-        }
-    </style>
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="sidebar-left">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Notifications</a></li>
-                <li><a href="#">Messages</a></li>
-                <li><a href="#">Bookmarks</a></li>
-                <li><a href="#">Lists</a></li>
-                <li><a href="#">Profile</a></li>
-                <li><a href="#">More</a></li>
-            </ul>
-            <button class="tweet-btn">Tweet</button>
+
+  <header>
+    <h1>Mini Twitter</h1>
+  </header>
+
+  <div class="container">
+
+    <!-- Profile -->
+    <aside class="profile">
+      <img src="https://via.placeholder.com/100" alt="Profile">
+      <h2>@yourusername</h2>
+      <p>Followers: 100</p>
+      <p>Following: 80</p>
+      <button>Edit Profile</button>
+    </aside>
+
+    <!-- Feed -->
+    <main class="feed">
+      <!-- Tweet Box -->
+      <div class="tweet-box">
+        <textarea placeholder="What's happening?" rows="3"></textarea>
+        <button>Tweet</button>
+      </div>
+
+      <!-- Tweet 1 -->
+      <div class="tweet">
+        <div class="tweet-header">
+          <img src="https://via.placeholder.com/50" alt="User">
+          <div>
+            <strong>@johndoe</strong>
+            <br><span>2m ago</span>
+          </div>
         </div>
-        <div class="main-content">
-            <div class="tweet">
-                <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
-                <div class="tweet-content">
-                    <span class="username">Username</span>
-                    <p>This is a sample tweet.</p>
-                    <img src="sunset.jpg" alt="Sunset Image" class="tweet-image">
-                </div>
-            </div>
-            <!-- More tweets can be added here -->
+        <p>This is my first tweet on this platform!</p>
+        <div class="tweet-actions">
+          <button>Like</button>
+          <button>Comment</button>
+          <button>Retweet</button>
         </div>
-        <div class="sidebar-right">
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-            </div>
-            <div class="trends">
-                <h3>Trends for you</h3>
-                <ul>
-                    <li><a href="#">Trend 1</a></li>
-                    <li><a href="#">Trend 2</a></li>
-                    <li><a href="#">Trend 3</a></li>
-                </ul>
-            </div>
-            <div class="who-to-follow">
-                <h3>Who to follow</h3>
-                <ul>
-                    <li>
-                        <img src="profile1.jpg" alt="Profile 1">
-                        <span>Username 1</span>
-                    </li>
-                    <li>
-                        <img src="profile2.jpg" alt="Profile 2">
-                        <span>Username 2</span>
-                    </li>
-                </ul>
-            </div>
+      </div>
+
+      <!-- Tweet 2 -->
+      <div class="tweet">
+        <div class="tweet-header">
+          <img src="https://via.placeholder.com/50" alt="User">
+          <div>
+            <strong>@janedoe</strong>
+            <br><span>10m ago</span>
+          </div>
         </div>
-    </div>
+        <p>Loving the new Twitter clone design!</p>
+        <div class="tweet-actions">
+          <button>Like</button>
+          <button>Comment</button>
+          <button>Retweet</button>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
 </body>
 </html>
