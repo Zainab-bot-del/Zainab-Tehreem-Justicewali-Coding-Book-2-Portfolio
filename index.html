@@ -1,754 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Clone</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twitter Clone</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f5f8fa;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .tweet-box {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 1rem;
+    }
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    button {
+      align-self: flex-end;
+      padding: 0.5rem 1rem;
+      background-color: #1da1f2;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .tweet {
+      padding: 1rem 0;
+      border-bottom: 1px solid #ccc;
+    }
+    .tweet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tweet-header span {
+      font-size: 0.9rem;
+      color: gray;
+    }
+    .tweet-body {
+      margin: 0.5rem 0;
+    }
+    .tweet-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    .tweet-actions i {
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <div class="logo">
-                <i class="fab fa-twitter"></i>
-            </div>
-            <nav>
-                <a href="#" class="active"><i class="fas fa-home"></i> Home</a>
-                <a href="#"><i class="fas fa-hashtag"></i> Explore</a>
-                <a href="#"><i class="fas fa-bell"></i> Notifications</a>
-                <a href="#"><i class="fas fa-envelope"></i> Messages</a>
-                <a href="#"><i class="fas fa-bookmark"></i> Bookmarks</a>
-                <a href="#"><i class="fas fa-list"></i> Lists</a>
-                <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-                <a href="#"><i class="fas fa-ellipsis-h"></i> More</a>
-            </nav>
-            <button class="tweet-btn">Tweet</button>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="header">
-                <h1>Home</h1>
-            </div>
-
-            <!-- Tweet Box -->
-            <div class="tweet-box">
-                <div class="tweet-box-left">
-                    <img src="images/profile-pic.jpg" alt="Profile" class="profile-pic">
-                </div>
-                <div class="tweet-box-right">
-                    <input type="text" placeholder="What's happening?">
-                    <div class="tweet-box-actions">
-                        <div class="tweet-icons">
-                            <i class="fas fa-image"></i>
-                            <i class="fas fa-poll"></i>
-                            <i class="fas fa-smile"></i>
-                            <i class="fas fa-calendar-alt"></i>
-                        </div>
-                        <button class="tweet-btn-small">Tweet</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tweet Feed -->
-            <div class="tweet-feed">
-                <!-- Tweet 1 -->
-                <div class="tweet">
-                    <div class="tweet-left">
-                        <img src="images/user1.jpg" alt="User" class="profile-pic">
-                    </div>
-                    <div class="tweet-right">
-                        <div class="tweet-header">
-                            <span class="username">Jane Doe</span>
-                            <span class="handle">@janedoe</span>
-                            <span class="time">· 2h</span>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                        <div class="tweet-content">
-                            Just launched my new website! Check it out and let me know what you think. #webdev #coding
-                        </div>
-                        <div class="tweet-actions">
-                            <span><i class="far fa-comment"></i> 24</span>
-                            <span><i class="fas fa-retweet"></i> 12</span>
-                            <span><i class="far fa-heart"></i> 89</span>
-                            <span><i class="fas fa-share"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tweet 2 -->
-                <div class="tweet">
-                    <div class="tweet-left">
-                        <img src="images/user2.jpg" alt="User" class="profile-pic">
-                    </div>
-                    <div class="tweet-right">
-                        <div class="tweet-header">
-                            <span class="username">John Smith</span>
-                            <span class="handle">@johnsmith</span>
-                            <span class="time">· 4h</span>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                        <div class="tweet-content">
-                            Beautiful day for a hike! Nature always helps me clear my mind and get new ideas. 🏞️ #outdoors #inspiration
-                        </div>
-                        <div class="tweet-image">
-                            <img src="images/hike.jpg" alt="Hiking">
-                        </div>
-                        <div class="tweet-actions">
-                            <span><i class="far fa-comment"></i> 8</span>
-                            <span><i class="fas fa-retweet"></i> 5</span>
-                            <span><i class="far fa-heart"></i> 42</span>
-                            <span><i class="fas fa-share"></i></span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tweet 3 -->
-                <div class="tweet">
-                    <div class="tweet-left">
-                        <img src="images/user3.jpg" alt="User" class="profile-pic">
-                    </div>
-                    <div class="tweet-right">
-                        <div class="tweet-header">
-                            <span class="username">Tech News</span>
-                            <span class="handle">@technews</span>
-                            <span class="time">· 6h</span>
-                            <i class="fas fa-ellipsis-h"></i>
-                        </div>
-                        <div class="tweet-content">
-                            Breaking: New AI model can generate realistic images from text descriptions. The future is here! #AI #innovation
-                        </div>
-                        <div class="tweet-actions">
-                            <span><i class="far fa-comment"></i> 156</span>
-                            <span><i class="fas fa-retweet"></i> 342</span>
-                            <span><i class="far fa-heart"></i> 890</span>
-                            <span><i class="fas fa-share"></i></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Sidebar -->
-        <div class="right-sidebar">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search Twitter">
-            </div>
-
-            <div class="trends">
-                <h2>Trends for you</h2>
-                <div class="trend">
-                    <span class="category">Technology · Trending</span>
-                    <span class="hashtag">#WebDevelopment</span>
-                    <span class="count">25.4K Tweets</span>
-                </div>
-                <div class="trend">
-                    <span class="category">Sports · Trending</span>
-                    <span class="hashtag">#WorldCup2023</span>
-                    <span class="count">102K Tweets</span>
-                </div>
-                <div class="trend">
-                    <span class="category">Politics · Trending</span>
-                    <span class="hashtag">#Election2023</span>
-                    <span class="count">45.2K Tweets</span>
-                </div>
-                <a href="#" class="show-more">Show more</a>
-            </div>
-
-            <div class="who-to-follow">
-                <h2>Who to follow</h2>
-                <div class="user">
-                    <img src="images/user4.jpg" alt="User" class="profile-pic-small">
-                    <div class="user-info">
-                        <span class="username">Sarah Johnson</span>
-                        <span class="handle">@sarahj</span>
-                    </div>
-                    <button class="follow-btn">Follow</button>
-                </div>
-                <div class="user">
-                    <img src="images/user5.jpg" alt="User" class="profile-pic-small">
-                    <div class="user-info">
-                        <span class="username">Mike Chen</span>
-                        <span class="handle">@mikechen</span>
-                    </div>
-                    <button class="follow-btn">Follow</button>
-                </div>
-                <a href="#" class="show-more">Show more</a>
-            </div>
-        </div>
+  <div class="container">
+    <h2>Twitter Clone</h2>
+    <div class="tweet-box">
+      <textarea id="tweetInput" rows="3" placeholder="What's happening?"></textarea>
+      <button onclick="postTweet()">Tweet</button>
     </div>
+    <div id="tweets"></div>
+  </div>
+
+  <script>
+    let tweets = [];
+
+    function postTweet() {
+      const tweetInput = document.getElementById("tweetInput");
+      const tweetText = tweetInput.value.trim();
+      if (tweetText === "") return;
+
+      const tweet = {
+        text: tweetText,
+        timestamp: new Date().toLocaleString(),
+        likes: 0
+      };
+      tweets.unshift(tweet);
+      tweetInput.value = "";
+      renderTweets();
+    }
+
+    function renderTweets() {
+      const tweetContainer = document.getElementById("tweets");
+      tweetContainer.innerHTML = "";
+      tweets.forEach((tweet, index) => {
+        tweetContainer.innerHTML += `
+          <div class="tweet">
+            <div class="tweet-header">
+              <strong>User Name</strong> <span>${tweet.timestamp}</span>
+            </div>
+            <div class="tweet-body">${tweet.text}</div>
+            <div class="tweet-actions">
+              <i class="fa-regular fa-thumbs-up" onclick="likeTweet(${index})"> ${tweet.likes}</i>
+              <i class="fa-regular fa-comment"></i>
+              <i class="fa-solid fa-trash" onclick="deleteTweet(${index})"></i>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function likeTweet(index) {
+      tweets[index].likes++;
+      renderTweets();
+    }
+
+    function deleteTweet(index) {
+      tweets.splice(index, 1);
+      renderTweets();
+    }
+  </script>
 </body>
-</html> 
-
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-body {
-    background-color: #fff;
-    color: #0f1419;
-}
-
-.container {
-    display: flex;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Sidebar Styles */
-.sidebar {
-    width: 250px;
-    padding: 10px;
-    position: fixed;
-    height: 100vh;
-    border-right: 1px solid #e6ecf0;
-}
-
-.logo {
-    font-size: 28px;
-    color: #1da1f2;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-nav a {
-    display: flex;
-    align-items: center;
-    padding: 12px 10px;
-    margin: 5px 0;
-    border-radius: 50px;
-    font-size: 19px;
-    font-weight: 700;
-}
-
-nav a:hover {
-    background-color: #e8f5fe;
-    color: #1da1f2;
-}
-
-nav a.active {
-    color: #1da1f2;
-}
-
-nav i {
-    margin-right: 15px;
-    font-size: 24px;
-}
-
-.tweet-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #1da1f2;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 700;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.tweet-btn:hover {
-    background-color: #1a8cd8;
-}
-
-/* Main Content Styles */
-.main-content {
-    flex: 1;
-    margin-left: 250px;
-    border-right: 1px solid #e6ecf0;
-    min-height: 100vh;
-}
-
-.header {
-    padding: 15px 20px;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.header h1 {
-    font-size: 20px;
-    font-weight: 800;
-}
-
-/* Tweet Box Styles */
-.tweet-box {
-    display: flex;
-    padding: 15px;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.tweet-box-left {
-    margin-right: 15px;
-}
-
-.profile-pic {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.tweet-box-right {
-    flex: 1;
-}
-
-.tweet-box-right input {
-    width: 100%;
-    border: none;
-    font-size: 20px;
-    padding: 10px 0;
-    outline: none;
-}
-
-.tweet-box-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-}
-
-.tweet-icons i {
-    color: #1da1f2;
-    margin-right: 15px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.tweet-btn-small {
-    padding: 8px 16px;
-    background-color: #1da1f2;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.tweet-btn-small:hover {
-    background-color: #1a8cd8;
-}
-
-/* Tweet Feed Styles */
-.tweet {
-    display: flex;
-    padding: 15px;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.tweet:hover {
-    background-color: #f7f7f7;
-}
-
-.tweet-right {
-    flex: 1;
-}
-
-.tweet-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.username {
-    font-weight: 700;
-    margin-right: 5px;
-}
-
-.handle, .time {
-    color: #657786;
-    margin-right: 5px;
-}
-
-.tweet-header i {
-    margin-left: auto;
-    color: #657786;
-}
-
-.tweet-content {
-    margin-bottom: 10px;
-    font-size: 15px;
-    line-height: 1.4;
-}
-
-.tweet-image {
-    width: 100%;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-
-.tweet-image img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-}
-
-.tweet-actions {
-    display: flex;
-    justify-content: space-between;
-    max-width: 400px;
-    color: #657786;
-}
-
-.tweet-actions span {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.tweet-actions i {
-    margin-right: 5px;
-    font-size: 16px;
-}
-
-/* Right Sidebar Styles */
-.right-sidebar {
-    width: 350px;
-    padding: 15px;
-    position: fixed;
-    right: 0;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    background-color: #e6ecf0;
-    border-radius: 50px;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-}
-
-.search-box i {
-    color: #657786;
-    margin-right: 10px;
-}
-
-.search-box input {
-    border: none;
-    background: transparent;
-    outline: none;
-    font-size: 15px;
-    width: 100%;
-}
-
-.trends, .who-to-follow {
-    background-color: #f7f9fa;
-    border-radius: 15px;
-    margin-bottom: 20px;
-}
-
-.trends h2, .who-to-follow h2 {
-    padding: 15px;
-    font-size: 18px;
-    font-weight: 800;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.trend {
-    padding: 15px;
-    border-bottom: 1px solid #e6ecf0;
-    cursor: pointer;
-}
-
-.trend:hover {
-    background-color: #e6ecf0;
-}
-
-.category {
-    font-size: 13px;
-    color: #657786;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.hashtag {
-    font-weight: 700;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.count {
-    font-size: 13px;
-    color: #657786;
-    display: block;
-}
-
-.show-more {
-    display: block;
-    padding: 15px;
-    color: #1da1f2;
-    font-size: 15px;
-}
-
-.user {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.profile-pic-small {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.user-info {
-    flex: 1;
-}
-
-.follow-btn {
-    padding: 5px 15px;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.follow-btn:hover {
-    background-color: #333;
-}
-
-/* Profile Page Styles */
-.profile-header {
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.profile-banner {
-    position: relative;
-    height: 200px;
-    background-color: #1da1f2;
-    overflow: hidden;
-}
-
-.profile-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.edit-profile-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    padding: 8px 15px;
-    background-color: transparent;
-    color: #000;
-    border: 1px solid #cfd9de;
-    border-radius: 50px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.edit-profile-btn:hover {
-    background-color: rgba(15, 20, 25, 0.1);
-}
-
-.profile-info {
-    padding: 15px;
-    position: relative;
-}
-
-.profile-pic-large {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 5px solid #fff;
-    position: absolute;
-    top: -70px;
-    left: 15px;
-    overflow: hidden;
-}
-
-.profile-pic-large img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.profile-details {
-    margin-top: 70px;
-}
-
-.profile-details h1 {
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 2px;
-}
-
-.handle {
-    color: #657786;
-    font-size: 15px;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.bio {
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 1.4;
-}
-
-.profile-meta {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 15px;
-    color: #657786;
-    font-size: 15px;
-}
-
-.profile-meta span {
-    margin-right: 15px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-}
-
-.profile-meta i {
-    margin-right: 5px;
-}
-
-.follow-stats {
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.follow-stats span {
-    margin-right: 15px;
-    font-size: 15px;
-    color: #0f1419;
-}
-
-.follow-stats strong {
-    font-weight: 700;
-}
-
-.profile-tabs {
-    display: flex;
-    border-bottom: 1px solid #e6ecf0;
-}
-
-.profile-tabs a {
-    padding: 15px;
-    font-size: 15px;
-    font-weight: 700;
-    color: #657786;
-    flex: 1;
-    text-align: center;
-}
-
-.profile-tabs a:hover {
-    background-color: #e6ecf0;
-}
-
-.profile-tabs a.active {
-    color: #1da1f2;
-    border-bottom: 2px solid #1da1f2;
-}
-
-/* Responsive Styles */
-@media (max-width: 1000px) {
-    .right-sidebar {
-        display: none;
-    }
-    
-    .main-content {
-        margin-right: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        width: 80px;
-    }
-    
-    .sidebar nav a span {
-        display: none;
-    }
-    
-    .sidebar nav a i {
-        margin-right: 0;
-        font-size: 22px;
-    }
-    
-    .tweet-btn span {
-        display: none;
-    }
-    
-    .tweet-btn {
-        width: auto;
-        padding: 10px;
-        border-radius: 50%;
-    }
-    
-    .tweet-btn i {
-        display: block;
-        font-size: 20px;
-    }
-    
-    .main-content {
-        margin-left: 80px;
-    }
-}
-
-@media (max-width: 500px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        bottom: 0;
-        top: auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 5px;
-        border-top: 1px solid #e6ecf0;
-        z-index: 100;
-        background-color: #fff;
-    }
-    
-    .logo, .tweet-btn {
-        display: none;
-    }
-    
-    .sidebar nav {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-    }
-    
-    .sidebar nav a {
-        padding: 10px;
-        margin: 0;
-    }
-    
-    .main-content {
-        margin-left: 0;
-        margin-bottom: 60px;
-    }
-}
+</html>
