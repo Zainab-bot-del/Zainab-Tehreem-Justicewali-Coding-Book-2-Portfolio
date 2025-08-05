@@ -10,41 +10,74 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     body {
-      background-color: #f5f8fa;
+      background-color: #e6ecf0;
+    }
+    .navbar {
+      background-color: #1da1f2;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .navbar i {
+      font-size: 1.5rem;
+    }
+    .navbar h1 {
+      font-size: 1.2rem;
     }
     .container {
       max-width: 600px;
-      margin: auto;
-      padding: 1rem;
+      margin: 1rem auto;
       background: white;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .tweet-box {
+    .profile-header {
+      background-color: #f5f8fa;
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .profile-header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .profile-header .info {
       display: flex;
       flex-direction: column;
+    }
+    .profile-header .info h3 {
+      margin-bottom: 0.2rem;
+    }
+    .tweet-box {
+      padding: 1rem;
       border-bottom: 1px solid #ccc;
-      padding-bottom: 1rem;
     }
     textarea {
       width: 100%;
       resize: none;
       padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
       margin-bottom: 0.5rem;
     }
     button {
-      align-self: flex-end;
       padding: 0.5rem 1rem;
       background-color: #1da1f2;
       border: none;
       color: white;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 20px;
     }
     .tweet {
-      padding: 1rem 0;
+      padding: 1rem;
       border-bottom: 1px solid #ccc;
     }
     .tweet-header {
@@ -53,29 +86,46 @@
       align-items: center;
     }
     .tweet-header span {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: gray;
     }
     .tweet-body {
       margin: 0.5rem 0;
+      font-size: 1rem;
     }
     .tweet-actions {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: #555;
     }
     .tweet-actions i {
       cursor: pointer;
+      transition: 0.2s;
+    }
+    .tweet-actions i:hover {
+      color: #1da1f2;
     }
     @media (max-width: 600px) {
       .container {
-        padding: 0.5rem;
+        margin: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
+  <div class="navbar">
+    <i class="fab fa-twitter"></i>
+    <h1>Twitter Clone</h1>
+  </div>
   <div class="container">
-    <h2>Twitter Clone</h2>
+    <div class="profile-header">
+      <img src="https://source.unsplash.com/50x50/?face" alt="Profile Picture">
+      <div class="info">
+        <h3>@username</h3>
+        <small>100 Followers • 80 Following</small>
+      </div>
+    </div>
     <div class="tweet-box">
       <textarea id="tweetInput" rows="3" placeholder="What's happening?"></textarea>
       <button onclick="postTweet()">Tweet</button>
@@ -108,7 +158,8 @@
         tweetContainer.innerHTML += `
           <div class="tweet">
             <div class="tweet-header">
-              <strong>User Name</strong> <span>${tweet.timestamp}</span>
+              <strong>@username</strong>
+              <span>${tweet.timestamp}</span>
             </div>
             <div class="tweet-body">${tweet.text}</div>
             <div class="tweet-actions">
