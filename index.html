@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mini Twitter</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini Twitter Clone</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: Arial, sans-serif;
-      background-color: #e6ecf0;
-      color: #14171a;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
     }
 
     header {
       background-color: #1da1f2;
       color: white;
-      padding: 1rem;
       text-align: center;
+      padding: 1rem;
     }
 
     .container {
-      display: flex;
-      flex-wrap: wrap;
-      max-width: 1000px;
+      max-width: 800px;
       margin: 20px auto;
-      gap: 20px;
       padding: 10px;
     }
 
-    /* Profile */
     .profile {
-      flex: 1 1 250px;
-      background: white;
-      padding: 1rem;
+      background-color: white;
+      padding: 20px;
       border-radius: 8px;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .profile img {
@@ -48,70 +39,57 @@
       margin-bottom: 10px;
     }
 
-    .profile button {
-      background-color: #1da1f2;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin-top: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    /* Feed */
-    .feed {
-      flex: 2 1 600px;
+    .profile h2 {
+      margin: 5px 0;
     }
 
     .tweet-box {
-      background: white;
-      padding: 1rem;
+      background-color: white;
+      padding: 15px;
       border-radius: 8px;
       margin-bottom: 20px;
     }
 
     .tweet-box textarea {
       width: 100%;
-      padding: 10px;
-      resize: none;
       border: 1px solid #ccc;
       border-radius: 5px;
+      padding: 10px;
+      resize: none;
       font-size: 16px;
     }
 
     .tweet-box button {
       margin-top: 10px;
+      float: right;
       background-color: #1da1f2;
       color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      float: right;
-      cursor: pointer;
+      padding: 8px 15px;
       border-radius: 5px;
+      cursor: pointer;
     }
 
     .tweet {
-      background: white;
-      padding: 1rem;
+      background-color: white;
+      padding: 15px;
       border-radius: 8px;
       margin-bottom: 15px;
     }
 
-    .tweet-header {
+    .tweet .tweet-header {
       display: flex;
       align-items: center;
-      gap: 10px;
       margin-bottom: 10px;
     }
 
-    .tweet-header img {
+    .tweet .tweet-header img {
+      width: 40px;
       border-radius: 50%;
-      width: 50px;
+      margin-right: 10px;
     }
 
     .tweet-actions {
-      display: flex;
-      justify-content: space-around;
       margin-top: 10px;
     }
 
@@ -119,13 +97,14 @@
       background: none;
       border: none;
       color: #1da1f2;
+      margin-right: 10px;
       cursor: pointer;
-      font-size: 16px;
     }
 
-    @media screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
+    @media (max-width: 600px) {
+      .tweet-box button {
+        width: 100%;
+        float: none;
       }
     }
   </style>
@@ -133,63 +112,49 @@
 <body>
 
   <header>
-    <h1>Mini Twitter</h1>
+    <h1>Mini Twitter Clone</h1>
   </header>
 
   <div class="container">
-
     <!-- Profile -->
-    <aside class="profile">
-      <img src="https://via.placeholder.com/100" alt="Profile">
-      <h2>@yourusername</h2>
-      <p>Followers: 100</p>
-      <p>Following: 80</p>
-      <button>Edit Profile</button>
-    </aside>
+    <div class="profile">
+      <img src="https://via.placeholder.com/100" alt="Profile Picture" />
+      <h2>@yourname</h2>
+      <p>Followers: 100 | Following: 80</p>
+    </div>
 
-    <!-- Feed -->
-    <main class="feed">
-      <!-- Tweet Box -->
-      <div class="tweet-box">
-        <textarea placeholder="What's happening?" rows="3"></textarea>
-        <button>Tweet</button>
+    <!-- Tweet Box -->
+    <div class="tweet-box">
+      <textarea rows="3" placeholder="What's happening?"></textarea>
+      <button>Tweet</button>
+    </div>
+
+    <!-- Tweets -->
+    <div class="tweet">
+      <div class="tweet-header">
+        <img src="https://via.placeholder.com/40" alt="User" />
+        <strong>@johndoe</strong> &nbsp; • 2m ago
       </div>
-
-      <!-- Tweet 1 -->
-      <div class="tweet">
-        <div class="tweet-header">
-          <img src="https://via.placeholder.com/50" alt="User">
-          <div>
-            <strong>@johndoe</strong>
-            <br><span>2m ago</span>
-          </div>
-        </div>
-        <p>This is my first tweet on this platform!</p>
-        <div class="tweet-actions">
-          <button>Like</button>
-          <button>Comment</button>
-          <button>Retweet</button>
-        </div>
+      <p>Hello world! This is my first tweet 🎉</p>
+      <div class="tweet-actions">
+        <button>Like</button>
+        <button>Comment</button>
+        <button>Retweet</button>
       </div>
+    </div>
 
-      <!-- Tweet 2 -->
-      <div class="tweet">
-        <div class="tweet-header">
-          <img src="https://via.placeholder.com/50" alt="User">
-          <div>
-            <strong>@janedoe</strong>
-            <br><span>10m ago</span>
-          </div>
-        </div>
-        <p>Loving the new Twitter clone design!</p>
-        <div class="tweet-actions">
-          <button>Like</button>
-          <button>Comment</button>
-          <button>Retweet</button>
-        </div>
+    <div class="tweet">
+      <div class="tweet-header">
+        <img src="https://via.placeholder.com/40" alt="User" />
+        <strong>@janedoe</strong> &nbsp; • 10m ago
       </div>
-    </main>
-
+      <p>Mini Twitter clone is looking good!</p>
+      <div class="tweet-actions">
+        <button>Like</button>
+        <button>Comment</button>
+        <button>Retweet</button>
+      </div>
+    </div>
   </div>
 
 </body>
