@@ -1,150 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Twitter Clone</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #e6ecf0;
       margin: 0;
+      padding: 0;
     }
-    .header {
+    header {
       background-color: #1da1f2;
       color: white;
-      padding: 15px;
-      font-size: 20px;
-      font-weight: bold;
-      text-align: center;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+    }
+    header img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    header h1 {
+      font-size: 24px;
+      margin: 0;
     }
     .container {
       max-width: 600px;
-      margin: 0 auto;
-      background-color: #fff;
-    }
-    .profile {
-      display: flex;
-      align-items: center;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       padding: 15px;
-      border-bottom: 1px solid #ddd;
     }
-    .profile img {
+    .tweet-box {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    .tweet-box img {
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      margin-right: 15px;
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
     }
-    .profile .info {
+    .tweet-content {
+      flex: 1;
+    }
+    .tweet-content h4 {
+      margin: 0 0 5px;
       font-size: 16px;
     }
-    .tweet {
+    .tweet-content p {
+      margin: 0;
+    }
+    .tweet-actions {
       display: flex;
-      padding: 15px;
-      border-bottom: 1px solid #ddd;
-    }
-    .tweet img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      margin-right: 15px;
-    }
-    .tweet .content {
-      flex-grow: 1;
-    }
-    .tweet .name {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .tweet .text {
+      gap: 15px;
+      margin-top: 8px;
+      color: gray;
       font-size: 14px;
+      cursor: pointer;
+    }
+    .new-tweet {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .new-tweet input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .new-tweet button {
+      background-color: #1da1f2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="header">Twitter Clone - @zainabtehreem_justicewali</div>
-  <div class="container">
-    <div class="profile">
-      <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Zainab">
-      <div class="info">
-        <strong>Zainab Tehreem</strong><br>
-        @zainabtehreem_justicewali
-      </div>
-    </div>
 
-    <!-- Tweets -->
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Amelia">
-      <div class="content">
-        <div class="name">Amelia</div>
-        <div class="text">Just finished reading a book on leadership. So inspired! 📚✨</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Isla">
-      <div class="content">
-        <div class="name">Isla</div>
-        <div class="text">Learning HTML and CSS with Zainab's help! 💻🔥</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Olivia">
-      <div class="content">
-        <div class="name">Olivia</div>
-        <div class="text">Every girl deserves education and respect. 💪👩‍🎓</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Ava">
-      <div class="content">
-        <div class="name">Ava</div>
-        <div class="text">Just made my first Canva design! So fun 🌈✨</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Freya">
-      <div class="content">
-        <div class="name">Freya</div>
-        <div class="text">I believe kindness is the strongest force 💖</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Lily">
-      <div class="content">
-        <div class="name">Lily</div>
-        <div class="text">Made a new video for my channel today with Zainab’s tips 🎥</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Grace">
-      <div class="content">
-        <div class="name">Grace</div>
-        <div class="text">Practicing self-discipline. Hard but worth it! 😇</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Mia">
-      <div class="content">
-        <div class="name">Mia</div>
-        <div class="text">I joined Rehan School Academy with Zainab! 🚀</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/9.jpg" alt="Harper">
-      <div class="content">
-        <div class="name">Harper</div>
-        <div class="text">Exploring AI and it’s so cool! Thank you Zainab 🤖❤️</div>
-      </div>
-    </div>
-    <div class="tweet">
-      <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Evie">
-      <div class="content">
-        <div class="name">Evie</div>
-        <div class="text">Creating short videos is my new passion! 🌟🎬</div>
-      </div>
-    </div>
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
+  <h1>Justice Feed</h1>
+</header>
 
+<div class="container">
+  <div class="new-tweet">
+    <img src="https://i.pravatar.cc/48?u=zainab" alt="Zainab">
+    <input type="text" id="tweetInput" placeholder="What's happening, Zainab?">
+    <button onclick="postTweet()">Tweet</button>
   </div>
+  <div id="tweets"></div>
+</div>
+
+<script>
+  const users = [
+    {name: "Amelia", img: "https://i.pravatar.cc/48?u=amelia"},
+    {name: "Isla", img: "https://i.pravatar.cc/48?u=isla"},
+    {name: "Olivia", img: "https://i.pravatar.cc/48?u=olivia"},
+    {name: "Ava", img: "https://i.pravatar.cc/48?u=ava"},
+    {name: "Freya", img: "https://i.pravatar.cc/48?u=freya"},
+    {name: "Lily", img: "https://i.pravatar.cc/48?u=lily"},
+    {name: "Grace", img: "https://i.pravatar.cc/48?u=grace"},
+    {name: "Mia", img: "https://i.pravatar.cc/48?u=mia"},
+    {name: "Harper", img: "https://i.pravatar.cc/48?u=harper"},
+    {name: "Evie", img: "https://i.pravatar.cc/48?u=evie"},
+  ];
+
+  const samplePosts = [
+    "Loving the sunny weather today! ☀️",
+    "Reading an amazing book right now 📚",
+    "Feeling inspired to create something new!",
+    "Weekend vibes are the best 🧋",
+    "Thinking about traveling to Japan someday 🇯🇵",
+    "Life is beautiful ✨",
+    "Cooking pasta tonight 🍝",
+    "Grateful for friends and family 💖",
+    "Movie night, anyone? 🍿",
+    "Learning something new every day 💡"
+  ];
+
+  function loadTweets() {
+    const tweetContainer = document.getElementById("tweets");
+    users.forEach((user, index) => {
+      const post = document.createElement("div");
+      post.classList.add("tweet-box");
+      post.innerHTML = `
+        <img src="${user.img}" alt="${user.name}">
+        <div class="tweet-content">
+          <h4>${user.name}</h4>
+          <p>${samplePosts[index]}</p>
+          <div class="tweet-actions">
+            <span><i class="far fa-comment"></i> Comment</span>
+            <span><i class="fas fa-retweet"></i> Repost</span>
+            <span><i class="far fa-heart"></i> Like</span>
+          </div>
+        </div>
+      `;
+      tweetContainer.appendChild(post);
+    });
+  }
+
+  function postTweet() {
+    const input = document.getElementById("tweetInput");
+    if (input.value.trim() === "") return;
+
+    const tweetContainer = document.getElementById("tweets");
+    const newTweet = document.createElement("div");
+    newTweet.classList.add("tweet-box");
+    newTweet.innerHTML = `
+      <img src="https://i.pravatar.cc/48?u=zainab" alt="Zainab">
+      <div class="tweet-content">
+        <h4>Zainab Tehreem</h4>
+        <p>${input.value}</p>
+        <div class="tweet-actions">
+          <span><i class="far fa-comment"></i> Comment</span>
+          <span><i class="fas fa-retweet"></i> Repost</span>
+          <span><i class="far fa-heart"></i> Like</span>
+        </div>
+      </div>
+    `;
+    tweetContainer.prepend(newTweet);
+    input.value = "";
+  }
+
+  loadTweets();
+</script>
+
 </body>
 </html>
