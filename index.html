@@ -1,200 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Twitter Clone</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
     body {
+      font-family: Arial, sans-serif;
       background-color: #e6ecf0;
+      margin: 0;
     }
-    .navbar {
+    .header {
       background-color: #1da1f2;
       color: white;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .navbar i {
-      font-size: 1.5rem;
-    }
-    .navbar h1 {
-      font-size: 1.2rem;
+      padding: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
     }
     .container {
       max-width: 600px;
-      margin: 1rem auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      background-color: #fff;
     }
-    .profile-header {
-      background-color: #f5f8fa;
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
+    .profile {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
     }
-    .profile-header img {
-      width: 50px;
-      height: 50px;
+    .profile img {
       border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
     }
-    .profile-header .info {
-      display: flex;
-      flex-direction: column;
-    }
-    .profile-header .info h3 {
-      margin-bottom: 0.2rem;
-    }
-    .tweet-box {
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
-    }
-    textarea {
-      width: 100%;
-      resize: none;
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 0.5rem;
-    }
-    button {
-      padding: 0.5rem 1rem;
-      background-color: #1da1f2;
-      border: none;
-      color: white;
-      cursor: pointer;
-      border-radius: 20px;
+    .profile .info {
+      font-size: 16px;
     }
     .tweet {
-      padding: 1rem;
-      border-bottom: 1px solid #ccc;
-    }
-    .tweet-header {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
     }
-    .tweet-header span {
-      font-size: 0.8rem;
-      color: gray;
+    .tweet img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
     }
-    .tweet-body {
-      margin: 0.5rem 0;
-      font-size: 1rem;
+    .tweet .content {
+      flex-grow: 1;
     }
-    .tweet-actions {
-      display: flex;
-      gap: 1.5rem;
-      font-size: 0.9rem;
-      color: #555;
+    .tweet .name {
+      font-weight: bold;
+      margin-bottom: 5px;
     }
-    .tweet-actions i {
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    .tweet-actions i:hover {
-      color: #1da1f2;
-    }
-    @media (max-width: 600px) {
-      .container {
-        margin: 0.5rem;
-      }
+    .tweet .text {
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <i class="fab fa-twitter"></i>
-    <h1>Twitter Clone</h1>
-  </div>
+  <div class="header">Twitter Clone - @zainabtehreem_justicewali</div>
   <div class="container">
-    <div class="profile-header">
-      <img src="https://source.unsplash.com/50x50/?face" alt="Profile Picture">
+    <div class="profile">
+      <img src="https://randomuser.me/api/portraits/women/10.jpg" alt="Zainab">
       <div class="info">
-        <h3>@zainabtehreem_justicewali</h3>
-        <small>100 Followers • 80 Following</small>
+        <strong>Zainab Tehreem</strong><br>
+        @zainabtehreem_justicewali
       </div>
     </div>
-    <div class="tweet-box">
-      <textarea id="tweetInput" rows="3" placeholder="What's happening?"></textarea>
-      <button onclick="postTweet()">Tweet</button>
+
+    <!-- Tweets -->
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Amelia">
+      <div class="content">
+        <div class="name">Amelia</div>
+        <div class="text">Just finished reading a book on leadership. So inspired! 📚✨</div>
+      </div>
     </div>
-    <div id="tweets"></div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Isla">
+      <div class="content">
+        <div class="name">Isla</div>
+        <div class="text">Learning HTML and CSS with Zainab's help! 💻🔥</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Olivia">
+      <div class="content">
+        <div class="name">Olivia</div>
+        <div class="text">Every girl deserves education and respect. 💪👩‍🎓</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Ava">
+      <div class="content">
+        <div class="name">Ava</div>
+        <div class="text">Just made my first Canva design! So fun 🌈✨</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/5.jpg" alt="Freya">
+      <div class="content">
+        <div class="name">Freya</div>
+        <div class="text">I believe kindness is the strongest force 💖</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/6.jpg" alt="Lily">
+      <div class="content">
+        <div class="name">Lily</div>
+        <div class="text">Made a new video for my channel today with Zainab’s tips 🎥</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Grace">
+      <div class="content">
+        <div class="name">Grace</div>
+        <div class="text">Practicing self-discipline. Hard but worth it! 😇</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/8.jpg" alt="Mia">
+      <div class="content">
+        <div class="name">Mia</div>
+        <div class="text">I joined Rehan School Academy with Zainab! 🚀</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/9.jpg" alt="Harper">
+      <div class="content">
+        <div class="name">Harper</div>
+        <div class="text">Exploring AI and it’s so cool! Thank you Zainab 🤖❤️</div>
+      </div>
+    </div>
+    <div class="tweet">
+      <img src="https://randomuser.me/api/portraits/women/11.jpg" alt="Evie">
+      <div class="content">
+        <div class="name">Evie</div>
+        <div class="text">Creating short videos is my new passion! 🌟🎬</div>
+      </div>
+    </div>
+
   </div>
-
-  <script>
-    let tweets = [
-      { user: "Amelia", text: "Just finished reading a great book! 📖", timestamp: "2025-08-05 10:00", likes: 2 },
-      { user: "Isla", text: "Enjoying the sunset at the beach 🌅", timestamp: "2025-08-05 09:30", likes: 4 },
-      { user: "Olivia", text: "New blog post is live on my site ✨", timestamp: "2025-08-05 09:00", likes: 1 },
-      { user: "Ava", text: "Love starting the day with a fresh cup of coffee ☕", timestamp: "2025-08-05 08:45", likes: 3 },
-      { user: "Freya", text: "Planning my weekend hiking trip 🏞️", timestamp: "2025-08-05 08:20", likes: 2 },
-      { user: "Lily", text: "Trying out watercolor painting today 🎨", timestamp: "2025-08-05 08:00", likes: 5 },
-      { user: "Grace", text: "Motivation of the day: Stay positive! 💪", timestamp: "2025-08-05 07:40", likes: 3 },
-      { user: "Mia", text: "Finished a big coding project 🚀", timestamp: "2025-08-05 07:00", likes: 6 },
-      { user: "Harper", text: "Morning yoga done ✅ #Mindful", timestamp: "2025-08-05 06:30", likes: 2 },
-      { user: "Evie", text: "Listening to my favorite playlist 🎧", timestamp: "2025-08-05 06:00", likes: 1 }
-    ];
-
-    function postTweet() {
-      const tweetInput = document.getElementById("tweetInput");
-      const tweetText = tweetInput.value.trim();
-      if (tweetText === "") return;
-
-      const tweet = {
-        user: "Zainab Tehreem",
-        text: tweetText,
-        timestamp: new Date().toLocaleString(),
-        likes: 0
-      };
-      tweets.unshift(tweet);
-      tweetInput.value = "";
-      renderTweets();
-    }
-
-    function renderTweets() {
-      const tweetContainer = document.getElementById("tweets");
-      tweetContainer.innerHTML = "";
-      tweets.forEach((tweet, index) => {
-        tweetContainer.innerHTML += `
-          <div class="tweet">
-            <div class="tweet-header">
-              <strong>@${tweet.user}</strong>
-              <span>${tweet.timestamp}</span>
-            </div>
-            <div class="tweet-body">${tweet.text}</div>
-            <div class="tweet-actions">
-              <i class="fa-regular fa-thumbs-up" onclick="likeTweet(${index})"> ${tweet.likes}</i>
-              <i class="fa-regular fa-comment"></i>
-              <i class="fa-solid fa-trash" onclick="deleteTweet(${index})"></i>
-            </div>
-          </div>
-        `;
-      });
-    }
-
-    function likeTweet(index) {
-      tweets[index].likes++;
-      renderTweets();
-    }
-
-    function deleteTweet(index) {
-      tweets.splice(index, 1);
-      renderTweets();
-    }
-
-    renderTweets();
-  </script>
 </body>
 </html>
