@@ -6,15 +6,17 @@
 <title>Zainab Tehreem Justicewali — Portfolio</title>
 <style>
   :root {
-    --bg:#1e1e1e; /* darker gray background */
+    --bg:#1e1e1e;
     --text:#e0e0e0;
     --heading:#fff;
     --muted:#aaa;
-    --card:rgba(50,50,50,0.75); /* transparent dark cards */
+    --card:rgba(50,50,50,0.75);
     --shadow:0 8px 20px rgba(0,0,0,0.4);
     --btn:#3a3a3a;
     --btn-hover:rgba(255,255,255,0.1);
+    --line:rgba(255,255,255,0.1);
   }
+
   *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif;}
   body{background:var(--bg);color:var(--text);line-height:1.6;}
   a{text-decoration:none;color:inherit;}
@@ -30,7 +32,17 @@
   .cta{display:inline-block;margin-top:16px;padding:10px 16px;background:var(--btn);color:#fff;border-radius:10px;transition:0.2s;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
   .cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.5);background:var(--btn-hover);}
   
-  section{padding:40px 20px;}
+  section{padding:40px 20px;position:relative;}
+  section::after{
+    content:"";
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:0;
+    height:1px;
+    background:var(--line);
+  }
+
   h2{color:var(--heading);margin-bottom:24px;font-size:1.6rem;text-shadow:1px 1px 2px #000;}
   .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
   
