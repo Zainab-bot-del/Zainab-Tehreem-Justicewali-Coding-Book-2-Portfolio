@@ -8,115 +8,103 @@
     <style>
         /* Global Styles */
         :root {
-            --light-gray: #f8f9fa;
-            --medium-gray: #e9ecef;
-            --dark-gray: #495057;
-            --darker-gray: #212529;
-            --text-gray: #6c757d;
+            --very-light-gray: #f2f2f2;
+            --light-gray: #cccccc;
+            --medium-gray: #a5a5a5;
+            --dark-gray: #595959;
+            --accent-color: #ff6b9d;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background-color: white;
-            color: var(--darker-gray);
+            background-color: var(--very-light-gray);
+            color: var(--dark-gray);
             line-height: 1.6;
-            font-size: 0.95rem;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
         h1, h2, h3 {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--darker-gray);
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-gray);
         }
         
         h1 {
-            font-size: 2rem;
-            line-height: 1.2;
+            font-size: 2.5rem;
         }
         
         h2 {
-            font-size: 1.5rem;
+            font-size: 2rem;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 40px;
             position: relative;
         }
         
         h2::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--dark-gray);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
             margin: 15px auto;
         }
         
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
         }
         
         p {
-            margin-bottom: 1rem;
-            color: var(--text-gray);
+            margin-bottom: 15px;
+            color: var(--medium-gray);
         }
         
         a {
             text-decoration: none;
-            color: var(--darker-gray);
-            transition: all 0.2s ease;
+            color: var(--dark-gray);
+            transition: all 0.3s ease;
         }
         
         a:hover {
-            color: var(--dark-gray);
+            color: var(--accent-color);
         }
         
         .btn {
             display: inline-block;
-            padding: 0.6rem 1.5rem;
-            background-color: var(--darker-gray);
+            padding: 12px 30px;
+            background-color: var(--accent-color);
             color: white;
-            border-radius: 4px;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            border: 1px solid var(--darker-gray);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
-            background-color: transparent;
-            color: var(--darker-gray);
-        }
-        
-        .btn-outline {
-            background-color: transparent;
-            color: var(--darker-gray);
-            border: 1px solid var(--dark-gray);
-        }
-        
-        .btn-outline:hover {
-            background-color: var(--darker-gray);
-            color: white;
+            background-color: var(--dark-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         /* Header & Navigation */
         header {
             background-color: white;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -127,14 +115,17 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 20px 0;
         }
         
         .logo {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--darker-gray);
-            letter-spacing: -0.5px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+        
+        .logo span {
+            color: var(--accent-color);
         }
         
         .nav-links {
@@ -143,12 +134,11 @@
         }
         
         .nav-links li {
-            margin-left: 1.5rem;
+            margin-left: 30px;
         }
         
         .nav-links a {
-            font-weight: 500;
-            font-size: 0.9rem;
+            font-weight: 600;
         }
         
         .hamburger {
@@ -158,12 +148,11 @@
         
         /* Hero Section */
         #home {
-            height: auto;
-            min-height: 90vh;
+            height: 100vh;
             display: flex;
             align-items: center;
+            background-color: white;
             padding-top: 80px;
-            background-color: var(--light-gray);
         }
         
         .hero-content {
@@ -174,18 +163,17 @@
         
         .hero-text {
             flex: 1;
-            padding-right: 2rem;
+            padding-right: 50px;
         }
         
         .hero-text h1 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 15px;
         }
         
         .tagline {
-            font-size: 1rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            max-width: 500px;
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
         }
         
         .hero-image {
@@ -195,19 +183,19 @@
         
         .hero-image img {
             max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
         }
         
         /* About Section */
         #about {
-            background-color: white;
+            background-color: var(--very-light-gray);
         }
         
         .about-content {
             display: flex;
-            align-items: flex-start;
-            gap: 3rem;
+            align-items: center;
+            gap: 50px;
         }
         
         .about-image {
@@ -216,8 +204,8 @@
         
         .about-image img {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .about-text {
@@ -225,77 +213,73 @@
         }
         
         .education-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
         
         .education-item h3 {
-            margin-bottom: 0.3rem;
+            margin-bottom: 5px;
         }
         
         .education-item p {
-            color: var(--text-gray);
-            font-size: 0.9rem;
+            color: var(--medium-gray);
         }
         
         /* Skills Section */
         #skills {
-            background-color: var(--light-gray);
+            background-color: white;
         }
         
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
         }
         
         .skill-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
+            background-color: var(--very-light-gray);
+            padding: 30px;
+            border-radius: 10px;
             text-align: center;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-            border: 1px solid var(--medium-gray);
+            transition: all 0.3s ease;
         }
         
         .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .skill-icon {
-            font-size: 2rem;
-            color: var(--dark-gray);
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
         }
         
         /* Projects Section */
         #projects {
-            background-color: white;
+            background-color: var(--very-light-gray);
         }
         
         .projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .project-card {
             background-color: white;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s ease;
-            border: 1px solid var(--medium-gray);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
         
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
         }
         
         .project-image {
-            height: 160px;
+            height: 200px;
             overflow: hidden;
         }
         
@@ -303,76 +287,82 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: all 0.4s ease;
+            transition: all 0.5s ease;
         }
         
         .project-card:hover .project-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .project-info {
-            padding: 1.2rem;
+            padding: 20px;
         }
         
         .project-info h3 {
-            margin-bottom: 0.5rem;
+            margin-bottom: 10px;
         }
         
         .project-links {
             display: flex;
-            margin-top: 1rem;
-            gap: 1rem;
+            margin-top: 20px;
         }
         
         .project-links a {
-            font-size: 0.85rem;
+            margin-right: 15px;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            color: var(--dark-gray);
         }
         
         .project-links i {
-            margin-right: 0.3rem;
-            font-size: 0.9rem;
+            margin-right: 5px;
         }
         
         /* Testimonials Section */
         #testimonials {
-            background-color: var(--light-gray);
+            background-color: white;
         }
         
         .testimonials-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
         .testimonial-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
+            background-color: var(--very-light-gray);
+            padding: 30px;
+            border-radius: 10px;
             position: relative;
-            border: 1px solid var(--medium-gray);
         }
         
-        .testimonial-content p {
-            font-style: italic;
-            color: var(--dark-gray);
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
         }
         
         .testimonial-author {
             display: flex;
             align-items: center;
-            margin-top: 1.2rem;
+            margin-top: 20px;
         }
         
         .author-image {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             overflow: hidden;
-            margin-right: 1rem;
-            border: 1px solid var(--medium-gray);
+            margin-right: 15px;
         }
         
         .author-image img {
@@ -382,127 +372,127 @@
         }
         
         .author-info h4 {
-            margin-bottom: 0.2rem;
-            font-size: 0.95rem;
+            margin-bottom: 5px;
         }
         
         .author-info p {
-            font-size: 0.8rem;
-            color: var(--text-gray);
+            font-size: 0.9rem;
+            color: var(--medium-gray);
         }
         
         /* Contact Section */
         #contact {
-            background-color: white;
+            background-color: var(--very-light-gray);
         }
         
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            gap: 50px;
         }
         
         .contact-info h3 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 30px;
         }
         
         .contact-details {
-            margin-bottom: 2rem;
+            margin-bottom: 30px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
         
         .contact-icon {
-            width: 36px;
-            height: 36px;
-            background-color: var(--dark-gray);
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1rem;
-            font-size: 0.9rem;
+            margin-right: 15px;
         }
         
         .social-links {
             display: flex;
-            margin-top: 1.5rem;
-            gap: 0.8rem;
+            margin-top: 30px;
         }
         
         .social-links a {
-            width: 36px;
-            height: 36px;
-            background-color: var(--light-gray);
+            width: 40px;
+            height: 40px;
+            background-color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.2s ease;
+            margin-right: 15px;
+            transition: all 0.3s ease;
         }
         
         .social-links a:hover {
-            background-color: var(--dark-gray);
+            background-color: var(--accent-color);
             color: white;
+            transform: translateY(-5px);
         }
         
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--medium-gray);
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
         }
         
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: var(--dark-gray);
-            box-shadow: 0 0 0 2px rgba(73, 80, 87, 0.1);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.2);
         }
         
         .contact-form textarea {
-            height: 120px;
+            height: 150px;
             resize: vertical;
         }
         
         /* Footer */
         footer {
-            background-color: var(--darker-gray);
+            background-color: var(--dark-gray);
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 30px 0;
         }
         
         .footer-content p {
-            color: var(--medium-gray);
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
         }
         
         .footer-links {
             display: flex;
             justify-content: center;
             list-style: none;
-            margin-bottom: 1.5rem;
-            gap: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
         }
         
         .footer-links a {
-            color: var(--medium-gray);
-            font-size: 0.9rem;
+            color: white;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--accent-color);
         }
         
         /* Responsive Design */
@@ -515,30 +505,28 @@
             .hero-text,
             .about-text {
                 padding-right: 0;
-                margin-bottom: 2.5rem;
+                margin-bottom: 50px;
                 text-align: center;
             }
             
             .hero-image,
             .about-image {
-                width: 70%;
-                margin: 0 auto;
+                width: 80%;
             }
         }
         
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 68px;
+                top: 80px;
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 68px);
+                height: calc(100vh - 80px);
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
-                justify-content: flex-start;
-                padding-top: 2rem;
-                transition: all 0.3s ease;
+                justify-content: center;
+                transition: all 0.5s ease;
             }
             
             .nav-links.active {
@@ -546,7 +534,7 @@
             }
             
             .nav-links li {
-                margin: 0.8rem 0;
+                margin: 20px 0;
             }
             
             .hamburger {
@@ -554,27 +542,22 @@
             }
             
             section {
-                padding: 3rem 0;
-            }
-            
-            .hero-image,
-            .about-image {
-                width: 100%;
+                padding: 60px 0;
             }
         }
         
         @media (max-width: 576px) {
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             h2 {
-                font-size: 1.4rem;
-                margin-bottom: 2rem;
+                font-size: 1.8rem;
             }
             
-            .skills-container {
-                grid-template-columns: 1fr;
+            .hero-image,
+            .about-image {
+                width: 100%;
             }
         }
     </style>
@@ -584,7 +567,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Zainab Justicewali</a>
+                <a href="#" class="logo">Zainab<span>Tehreem</span></a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -608,13 +591,11 @@
                     <h1>Zainab Tehreem Justicewali</h1>
                     <h2>Student & AI/Tech Enthusiast</h2>
                     <p class="tagline">Passionate about leveraging technology to create innovative solutions and make a positive impact.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center;">
-                        <a href="#contact" class="btn">Get In Touch</a>
-                        <a href="#projects" class="btn btn-outline">View My Work</a>
-                    </div>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#projects" class="btn" style="background-color: var(--dark-gray); margin-left: 15px;">View My Work</a>
                 </div>
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Zainab Tehreem Justicewali">
+                    <img src="https://www.facebook.com/share/1FJaFCnS5P/" alt="Zainab Tehreem Justicewali">
                 </div>
             </div>
         </div>
@@ -633,7 +614,7 @@
                     <p>My journey in tech began when I first discovered programming in high school, and since then, I've been on a mission to learn, grow, and contribute to the tech community.</p>
                     <p>When I'm not coding or studying, you can find me attending tech meetups, participating in hackathons, or exploring new ways to apply technology to solve real-world problems.</p>
                     
-                    <h3 style="margin-top: 1.5rem;">Education</h3>
+                    <h3 style="margin-top: 30px;">Education</h3>
                     <div class="education-item">
                         <h3>Bachelor's Degree in Computer Science</h3>
                         <p>University of Technology (2021 - Present)</p>
@@ -680,6 +661,20 @@
                     <h3>UI/UX Design</h3>
                     <p>Understanding of design principles and creating user-friendly interfaces.</p>
                 </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Team Collaboration</h3>
+                    <p>Effective communicator with experience working in agile development teams.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Problem Solving</h3>
+                    <p>Strong analytical skills with ability to break down complex problems.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -697,8 +692,8 @@
                         <h3>AI-Powered Educational Tool</h3>
                         <p>Developed a machine learning model that personalizes learning content based on student performance and learning style.</p>
                         <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -710,8 +705,21 @@
                         <h3>Data Visualization Dashboard</h3>
                         <p>Created an interactive dashboard for visualizing complex datasets using Python and JavaScript libraries.</p>
                         <div class="project-links">
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="#"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mobile App">
+                    </div>
+                    <div class="project-info">
+                        <h3>Community Service Mobile App</h3>
+                        <p>Designed and developed a mobile application that connects volunteers with local community service opportunities.</p>
+                        <div class="project-links">
+                            <a href="#"><i class="fab fa-github"></i> View Code</a>
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         </div>
                     </div>
                 </div>
@@ -752,6 +760,20 @@
                         </div>
                     </div>
                 </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>Zainab's leadership in our university's Women in Tech group has been inspiring. She organized workshops that helped dozens of students gain technical skills.</p>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Maria Gonzalez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Maria Gonzalez</h4>
+                                <p>President, Women in Tech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -784,20 +806,31 @@
                                 <p>+1 (123) 456-7890</p>
                             </div>
                         </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Tech City, Innovation State</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-github"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                     
-                    <a href="#" class="btn" style="margin-top: 1.5rem;">Download Resume</a>
+                    <a href="#" class="btn" style="margin-top: 30px;">Download Resume</a>
                 </div>
                 <div class="contact-form">
                     <form>
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
                         <textarea placeholder="Your Message" required></textarea>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -810,7 +843,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: inline-block;">Zainab Justicewali</a>
+                <a href="#" class="logo" style="color: white; margin-bottom: 20px; display: inline-block;">Zainab<span style="color: var(--accent-color);">Tehreem</span></a>
                 <p>Student & AI/Tech Enthusiast</p>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
@@ -854,6 +887,12 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
         });
         
         // Form submission
