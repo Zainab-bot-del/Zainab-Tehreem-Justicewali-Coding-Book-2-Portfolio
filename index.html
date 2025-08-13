@@ -1,292 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zainab Tehreem Justicewali — Portfolio</title>
 <style>
-  :root{
-    --bg:#f8f9fa;
-    --line:#e0e0e0;
-    --muted:#8e8e8e;
-    --text:#5a5a5a;
-    --heading:#3d3d3d;
-    --dark:#2b3035;
-    --card:rgba(255,255,255,0.92);
-    --shadow:0 4px 12px rgba(0,0,0,0.08);
+  :root {
+    --bg:#1e1e1e; /* darker gray background */
+    --text:#e0e0e0;
+    --heading:#fff;
+    --muted:#aaa;
+    --card:rgba(50,50,50,0.75); /* transparent dark cards */
+    --shadow:0 8px 20px rgba(0,0,0,0.4);
+    --btn:#3a3a3a;
+    --btn-hover:rgba(255,255,255,0.1);
   }
-
-  /* Base */
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0;
-    font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-  }
-  a{color:inherit;text-decoration:none}
-  a:focus,button:focus{outline:2px dashed var(--muted);outline-offset:3px}
-
-  /* Top bar */
-  header{
-    position:sticky; top:0; z-index:10;
-    background:var(--dark);
-    color:#fff;
-    border-bottom:1px solid rgba(0,0,0,0.1);
-    backdrop-filter:blur(6px);
-    background-color:rgba(43,48,53,0.96);
-  }
-  .container{max-width:980px;margin:0 auto;padding:0 20px}
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px 0;
-  }
-  .brand{
-    font-weight:700; letter-spacing:.3px; white-space:nowrap;
-  }
-  .menu a{
-    padding:8px 10px; border-radius:8px;
-    transition:all 0.2s ease;
-  }
-  .menu a:hover{background:rgba(255,255,255,.12)}
-
-  /* Hero */
-  .hero{
-    padding:56px 20px 36px;
-    background:linear-gradient(180deg, #f1f3f5 0%, var(--bg) 100%);
-  }
-  .hero h1{
-    margin:0 0 10px; color:#fff; /* for contrast on dark header when anchored */
-  }
-  /* We place title below header visually */
-  .intro{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:28px;
-    margin-top:-28px;
-    box-shadow:var(--shadow);
-    backdrop-filter:blur(4px);
-  }
-  .intro h1{color:var(--heading); margin:0 0 6px; font-size:clamp(26px,4vw,36px)}
-  .intro p{color:var(--muted); margin:0}
-  .cta{
-    margin-top:16px;
-    display:inline-block;
-    background:var(--dark);
-    color:#fff;
-    border:1px solid #2b3035;
-    padding:10px 14px;
-    border-radius:10px;
-    transition:transform .15s ease, opacity .15s ease;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-  }
-  .cta:hover{transform:translateY(-1px); opacity:.95; box-shadow:0 4px 12px rgba(0,0,0,0.15)}
-
-  /* Sections */
-  section{
-    padding:38px 20px;
-    position:relative;
-  }
-  section:not(:last-child)::after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:20px;
-    right:20px;
-    height:1px;
-    background:var(--line);
-  }
-  h2{
-    color:var(--heading);
-    margin:0 0 20px;
-    font-size:clamp(20px,3.4vw,28px);
-    position:relative;
-    display:inline-block;
-  }
-  h2::after{
-    content:"";
-    position:absolute;
-    bottom:-8px;
-    left:0;
-    width:50px;
-    height:3px;
-    background:var(--line);
-    border-radius:3px;
-  }
-  .lead{color:var(--text); max-width:800px; line-height:1.7}
-
-  /* Cards/grids */
-  .grid{
-    display:grid; gap:20px;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    margin-top:20px;
-  }
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:20px;
-    transition:transform .2s ease, box-shadow .2s ease;
-    backdrop-filter:blur(4px);
-  }
-  .card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 24px rgba(0,0,0,0.1);
-    border-color:rgba(0,0,0,0.1);
-  }
-  .muted{color:var(--muted); font-size:.95rem; line-height:1.6}
-
-  /* Project item */
-  .project h3{margin:0 0 8px; color:var(--heading); font-size:1.1rem}
-  .project .links a{
-    display:inline-block; margin-right:10px; margin-top:10px;
-    padding:6px 12px; border:1px solid var(--line); border-radius:8px;
-    transition:all 0.2s ease;
-    font-size:0.9rem;
-  }
-  .project .links a:hover{
-    border-color:var(--muted);
-    background:rgba(0,0,0,0.02);
-  }
-
-  /* Contact */
-  .contact a{
-    color:var(--dark);
-    border-bottom:1px solid var(--line);
-    transition:all 0.2s ease;
-  }
-  .contact a:hover{
-    border-color:var(--muted);
-    color:var(--heading);
-  }
-
-  /* Footer */
-  footer{
-    border-top:1px solid var(--line);
-    padding:18px 20px; text-align:center; color:var(--muted);
-    font-size:0.9rem;
-  }
-
-  /* Utilities */
-  .spacer{height:10px}
+  *{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif;}
+  body{background:var(--bg);color:var(--text);line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+  
+  header{position:sticky;top:0;background:#111;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;z-index:10;}
+  nav a{margin-left:12px;padding:6px 10px;border-radius:6px;transition:0.2s;position:relative;}
+  nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:#fff;transition:0.3s;}
+  nav a:hover::after{width:100%;}
+  
+  .hero{padding:60px 20px;text-align:center;}
+  .intro{background:var(--card);padding:28px;border-radius:16px;display:inline-block;box-shadow:var(--shadow);}
+  h1{color:var(--heading);margin-bottom:8px;text-shadow:1px 1px 3px #000;}
+  .cta{display:inline-block;margin-top:16px;padding:10px 16px;background:var(--btn);color:#fff;border-radius:10px;transition:0.2s;box-shadow:0 4px 12px rgba(0,0,0,0.3);}
+  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.5);background:var(--btn-hover);}
+  
+  section{padding:40px 20px;}
+  h2{color:var(--heading);margin-bottom:24px;font-size:1.6rem;text-shadow:1px 1px 2px #000;}
+  .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  
+  .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:var(--shadow);transition:0.3s;position:relative;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,0.6);}
+  .card h3{margin-bottom:8px;color:var(--heading);text-shadow:1px 1px 2px #000;}
+  .card p.muted{color:var(--muted);}
+  
+  footer{padding:16px;text-align:center;color:var(--muted);font-size:.85rem;}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container nav">
-    <div class="brand">Zainab Tehreem Justicewali</div>
-    <nav class="menu" aria-label="Primary">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+  <div>Zainab Tehreem Justicewali</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
-<!-- HERO -->
 <div id="home" class="hero">
-  <div class="container">
-    <div class="intro">
-      <h1>AI & Coding Portfolio</h1>
-      <p class="muted">I build simple, useful projects by combining programming with AI.</p>
-      <a class="cta" href="#projects">View Projects</a>
-    </div>
+  <div class="intro">
+    <h1>AI & Coding Portfolio</h1>
+    <p class="muted">Building simple, useful projects with programming & AI.</p>
+    <a class="cta" href="#projects">View Projects →</a>
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p class="lead">
-      I'm <strong>Zainab Tehreem Justicewali</strong>, a learner at Rehan School Online Academy.
-      I enjoy exploring how AI can make creative work and everyday tasks faster and smarter.
-      My focus is on clean UI, clear logic, and practical outcomes.
-    </p>
-  </div>
+  <h2>About Me</h2>
+  <p>I'm <strong>Zainab Tehreem Justicewali</strong>, a learner at Rehan School Online Academy. I enjoy exploring AI to make tasks faster and smarter.</p>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
-  <div class="container">
-    <h2>Skills — Coding + AI</h2>
-    <div class="grid">
-      <div class="card"><strong>HTML • CSS • JS</strong><div class="spacer"></div><div class="muted">Responsive layouts & components with semantic markup</div></div>
-      <div class="card"><strong>AI Tools</strong><div class="spacer"></div><div class="muted">ChatGPT, prompt design, workflow automation</div></div>
-      <div class="card"><strong>Problem Solving</strong><div class="spacer"></div><div class="muted">Breaking complex tasks into simple steps</div></div>
-      <div class="card"><strong>Design Basics</strong><div class="spacer"></div><div class="muted">Usability, spacing, typography & subtle shadows</div></div>
-    </div>
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>HTML • CSS • JS</h3><p class="muted">Responsive layouts & components</p></div>
+    <div class="card"><h3>AI Tools</h3><p class="muted">ChatGPT, prompts, automation</p></div>
+    <div class="card"><h3>Problem Solving</h3><p class="muted">Breaking tasks into steps</p></div>
+    <div class="card"><h3>Design Basics</h3><p class="muted">Usability & subtle shadows</p></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="container">
-    <h2>Projects — Showcase</h2>
-    <div class="grid">
-      <div class="card project">
-        <h3>AI Prompt Helper</h3>
-        <p class="muted">A tiny tool that suggests better prompts to get clearer AI answers with examples.</p>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live Demo</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="card project">
-        <h3>Auto Email Draft</h3>
-        <p class="muted">Generates polite email drafts from a short note using AI templates.</p>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live Demo</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="card project">
-        <h3>Study Planner</h3>
-        <p class="muted">Minimal planner that organizes tasks with AI-suggested time blocks.</p>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live Demo</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <div class="card project">
-        <h3>Mini Calculator</h3>
-        <p class="muted">A clean, keyboard-friendly calculator built with vanilla JavaScript.</p>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener">Live Demo</a>
-          <a href="#" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-    </div>
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>AI Prompt Helper</h3><p class="muted">Suggests better AI prompts.</p></div>
+    <div class="card"><h3>Auto Email Draft</h3><p class="muted">Generates polite email drafts.</p></div>
+    <div class="card"><h3>Study Planner</h3><p class="muted">Organizes tasks with AI.</p></div>
+    <div class="card"><h3>Mini Calculator</h3><p class="muted">Keyboard-friendly JS calculator.</p></div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <p class="lead contact">
-      Email: <a href="mailto:zainabtehreemjusticewali@gmail.com">zainabtehreemjusticewali@gmail.com</a><br/>
-      Social: <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a> ·
-      <a href="https://twitter.com" target="_blank" rel="noopener">Twitter/X</a> ·
-      <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
-    </p>
-  </div>
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:zainabtehreemjusticewali@gmail.com">zainabtehreemjusticewali@gmail.com</a></p>
+  <p>Social: <a href="#">LinkedIn</a> · <a href="#">Twitter</a> · <a href="#">GitHub</a></p>
 </section>
 
-<footer>
-  <div class="container">
-    © <span id="y"></span> Zainab Tehreem Justicewali · Refined gray palette with subtle transparency
-  </div>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
+<footer>© <span id="y"></span> Zainab Tehreem Justicewali</footer>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
