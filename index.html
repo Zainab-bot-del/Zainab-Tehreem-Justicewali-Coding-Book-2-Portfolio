@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Zainab Tehreem - Portfolio</title>
+  <title>Zainab Tehreem - Coding Portfolio</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -224,6 +224,37 @@
       color: #2563eb;
     }
     
+    /* Coding Languages */
+    .languages {
+      background: #f8fafc;
+      padding: 60px 0;
+    }
+    
+    .languages-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    
+    .language-item {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+    
+    .language-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .language-item i {
+      font-size: 3rem;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+    
     /* Stats Section */
     .stats {
       background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
@@ -283,19 +314,27 @@
       height: 100%;
       background: rgba(37, 99, 235, 0.8);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       opacity: 0;
       transition: opacity 0.3s;
+      padding: 20px;
+      text-align: center;
     }
     
     .portfolio-item:hover .portfolio-item-overlay {
       opacity: 1;
     }
     
-    .portfolio-item-overlay i {
+    .portfolio-item-overlay h3 {
       color: #fff;
-      font-size: 2rem;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .portfolio-item-overlay p {
+      color: #e0f2fe;
     }
     
     /* Contact Section */
@@ -497,6 +536,7 @@
       <ul class="nav-menu">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -508,7 +548,7 @@
     <div class="container hero-content">
       <img src="zzz.png" alt="Zainab Tehreem" class="hero-img">
       <h1>Zainab Tehreem Justicewali</h1>
-      <p>Video Editor & Coder</p>
+      <p>Young Coder & Programming Enthusiast</p>
       <a href="#contact" class="btn">Get In Touch</a>
     </div>
   </section>
@@ -522,30 +562,87 @@
       
       <div class="about-content">
         <div class="about-text">
-          <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding and video editing. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
-          <p>My journey in technology started when I was 10, and since then I've been constantly expanding my knowledge and skills in both programming and creative domains.</p>
+          <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
+          <p>My journey in programming started when I was 10, and since then I've been constantly expanding my knowledge and skills in various programming languages and technologies.</p>
+          <p>I believe that coding is a superpower that allows me to bring my ideas to life and create solutions that can help people.</p>
         </div>
         
         <div class="about-img">
           <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Image">
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Coding Languages -->
+  <section class="languages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Coding Languages</h2>
+      </div>
+      
+      <div class="languages-container">
+        <div class="language-item">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+        </div>
+        
+        <div class="language-item">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+        </div>
+        
+        <div class="language-item">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+        </div>
+        
+        <div class="language-item">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Coding Skills</h2>
+      </div>
       
       <div class="skills-container">
         <div class="skill">
-          <h3>Video Editing</h3>
-          <div class="skill-bar">
-            <div class="skill-progress" style="width: 90%"><span>90%</span></div>
-          </div>
-          <p>Proficient in various video editing software with experience creating engaging content.</p>
-        </div>
-        
-        <div class="skill">
-          <h3>Coding</h3>
+          <h3>Web Development</h3>
           <div class="skill-bar">
             <div class="skill-progress" style="width: 85%"><span>85%</span></div>
           </div>
-          <p>Skilled in multiple programming languages and web development technologies.</p>
+          <p>Building responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+        </div>
+        
+        <div class="skill">
+          <h3>Python Programming</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"><span>80%</span></div>
+          </div>
+          <p>Creating applications and solving problems using Python programming language.</p>
+        </div>
+        
+        <div class="skill">
+          <h3>Problem Solving</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"><span>90%</span></div>
+          </div>
+          <p>Analyzing problems and developing efficient algorithmic solutions.</p>
+        </div>
+        
+        <div class="skill">
+          <h3>Game Development</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"><span>75%</span></div>
+          </div>
+          <p>Creating interactive games using Python and JavaScript game libraries.</p>
         </div>
       </div>
     </div>
@@ -582,50 +679,31 @@
   <section id="portfolio">
     <div class="container">
       <div class="section-title">
-        <h2>My Portfolio</h2>
+        <h2>My Coding Projects</h2>
       </div>
       
       <div class="portfolio-grid">
-        <!-- Project items -->
         <div class="portfolio-item">
-          <img src="JUST.jpg" alt="Project 1">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
           <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
+            <h3>Tic-Tac-Toe Game</h3>
+            <p>A responsive web game built with HTML, CSS, and JavaScript</p>
           </div>
         </div>
         
         <div class="portfolio-item">
-          <img src="Tic-Tac-Toe game.jpg" alt="Project 2">
+          <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
           <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
+            <h3>Calculator App</h3>
+            <p>A functional calculator with modern UI design</p>
           </div>
         </div>
         
         <div class="portfolio-item">
-          <img src="Calculator.jpg" alt="Project 3">
+          <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
           <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <img src="To-Do List.jpg" alt="Project 4">
-          <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <img src="E.jpg" alt="Project 5">
-          <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <img src="W.jpg" alt="Project 6">
-          <div class="portfolio-item-overlay">
-            <i class="fas fa-search-plus"></i>
+            <h3>To-Do List App</h3>
+            <p>A task management application with local storage</p>
           </div>
         </div>
       </div>
@@ -686,7 +764,7 @@
       <div class="footer-container">
         <div class="footer-about">
           <h3>About Me</h3>
-          <p>A passionate young coder and video editor with a drive to create innovative solutions and engaging visual content.</p>
+          <p>A passionate young coder with a drive to create innovative solutions and applications.</p>
         </div>
         
         <div class="footer-links">
@@ -694,6 +772,7 @@
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
