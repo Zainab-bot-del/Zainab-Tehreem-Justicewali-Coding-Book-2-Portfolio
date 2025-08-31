@@ -9,65 +9,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
-    /* Root Colors */
     :root {
-      --primary: #0a192f;  /* Dark navy */
-      --secondary: #64ffda; /* Accent teal */
+      --primary: #0a192f;
+      --secondary: #64ffda;
       --text-light: #ccd6f6;
       --text-dark: #8892b0;
       --card-bg: #112240;
       --hover-bg: #1e2a47;
     }
 
-    /* Reset */
-    * {box-sizing: border-box; margin:0; padding:0;}
-    body {font-family: 'Montserrat', sans-serif; background-color: var(--primary); color: var(--text-light); scroll-behavior: smooth;}
-
-    a {text-decoration: none; color: inherit;}
-    img {display: block; max-width: 100%;}
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Montserrat',sans-serif; color: var(--text-light); background-color: var(--primary); scroll-behavior:smooth;}
+    a {text-decoration:none; color:inherit;}
+    img {display:block; max-width:100%;}
 
     /* Sidebar */
     .sidebar {
-      position: fixed; left:0; top:0; width: 80px; height: 100vh;
-      background-color: var(--card-bg); display:flex; flex-direction: column; align-items: center; padding-top: 20px;
+      position: fixed; left:0; top:0; width:200px; height:100vh; background: var(--card-bg);
+      display:flex; flex-direction: column; align-items: center; padding-top:30px;
     }
-    .sidebar img {border-radius:50%; width:60px; margin-bottom:20px; border:2px solid var(--secondary);}
-    .sidebar a {margin:15px 0; font-size:1.5rem; transition: color 0.3s;}
-    .sidebar a:hover {color: var(--secondary);}
-
-    /* Top navbar for small screens */
-    .topnav {display:none;}
-    @media(max-width: 768px){
-      .sidebar{display:none;}
-      .topnav {display:flex; justify-content: space-around; background-color: var(--card-bg); padding:10px 0; position: fixed; width: 100%; top:0; z-index:100;}
-      .topnav a {font-size: 1rem;}
-      #main{margin-left:0;}
-    }
+    .sidebar img {width:80px; border-radius:50%; border:2px solid var(--secondary); margin-bottom:30px;}
+    .sidebar a {width:100%; padding:15px; text-align:left; font-weight:600; color:var(--text-light); transition: 0.3s;}
+    .sidebar a:hover, .sidebar a.active {background: var(--hover-bg); color: var(--secondary);}
 
     /* Main content */
-    #main {margin-left:80px; padding: 2rem;}
+    #main {margin-left:200px; scroll-behavior: smooth;}
 
-    /* Hero Section */
-    .hero {
-      min-height:100vh; display:flex; flex-direction: column; justify-content:center; align-items:center; text-align:center;
-    }
-    .hero h1 {font-size: 3rem; color: var(--secondary);}
-    .hero h2 {font-size:1.5rem; color: var(--text-dark); margin-top:10px;}
-    .hero img {width:150px; height:150px; border-radius:50%; margin-top:20px; border:2px solid var(--secondary);}
-    
-    /* Sections */
-    section {padding:60px 0;}
-    .section-title {font-size:2rem; color: var(--secondary); text-align:center; margin-bottom:40px; font-weight:600;}
+    section {min-height:100vh; padding:60px 40px; display:flex; flex-direction: column; justify-content:center;}
 
-    /* About */
-    .about p {max-width:600px; margin: 0 auto 20px auto; line-height:1.6; color: var(--text-light);}
-    
+    /* Section Titles */
+    .section-title {font-size:2rem; color: var(--secondary); margin-bottom:30px; font-weight:600; text-align:center;}
+
+    /* Hero */
+    .hero {align-items:center; text-align:center;}
+    .hero h1 {font-size:3rem; margin-bottom:15px;}
+    .hero h2 {font-size:1.5rem; color: var(--text-dark);}
+    .hero img {width:150px; height:150px; border-radius:50%; border:2px solid var(--secondary); margin-top:20px;}
+
     /* Skills */
     .skills {display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
     .skill {background: var(--card-bg); padding:20px; border-radius:10px; min-width:200px; text-align:center; transition: transform 0.3s;}
     .skill:hover {transform: translateY(-5px);}
     .skill h3 {margin-bottom:10px; color: var(--secondary);}
-    .skill-bar {background: #223152; border-radius:10px; overflow:hidden; height:15px; margin-top:10px;}
+    .skill-bar {background: #223152; border-radius:10px; overflow:hidden; height:15px;}
     .skill-fill {height:100%; background: var(--secondary); width:0; transition: width 1s;}
 
     /* Portfolio */
@@ -80,7 +64,7 @@
     /* Contact */
     .contact-form {max-width:500px; margin: 0 auto;}
     .contact-form input, .contact-form textarea {width:100%; padding:15px; margin-bottom:20px; border:none; border-radius:5px; background: var(--card-bg); color: var(--text-light);}
-    .contact-form button {padding:15px 30px; border:none; border-radius:5px; background: var(--secondary); color: var(--primary); font-weight:600; cursor:pointer; transition: background 0.3s;}
+    .contact-form button {padding:15px 30px; border:none; border-radius:5px; background: var(--secondary); color: var(--primary); font-weight:600; cursor:pointer; transition: 0.3s;}
     .contact-form button:hover{background:#52c2ab;}
 
     /* Footer */
@@ -92,7 +76,12 @@
     #modal {display:none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:1000;}
     #modal img{max-width:80%; max-height:80%; border-radius:10px;}
     #modal span{position:absolute; top:20px; right:30px; font-size:2rem; color:white; cursor:pointer;}
-    
+
+    /* Responsive */
+    @media(max-width:768px){
+      .sidebar{display:none;}
+      #main{margin-left:0;}
+    }
   </style>
 </head>
 <body>
@@ -100,38 +89,26 @@
   <!-- Sidebar -->
   <nav class="sidebar">
     <img src="zzz.png" alt="Zainab">
-    <a href="#home"><i class="fa fa-home"></i></a>
-    <a href="#about"><i class="fa fa-user"></i></a>
-    <a href="#portfolio"><i class="fa fa-briefcase"></i></a>
-    <a href="#contact"><i class="fa fa-envelope"></i></a>
-  </nav>
-
-  <!-- Top nav for mobile -->
-  <div class="topnav">
-    <a href="#home">Home</a>
+    <a href="#home" class="active">Home</a>
     <a href="#about">About</a>
     <a href="#portfolio">Portfolio</a>
     <a href="#contact">Contact</a>
-  </div>
+  </nav>
 
   <div id="main">
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
       <h1>Zainab Tehreem</h1>
       <h2>Professional Video Editor & Coder</h2>
       <img src="zzz.png" alt="Zainab">
     </section>
 
-    <!-- About -->
-    <section id="about" class="about">
+    <!-- About Section -->
+    <section id="about">
       <h2 class="section-title">About Me</h2>
       <p>Hello, I am Zainab Tehreem, a passionate 13-year-old coder and video editor. I love creating, solving problems, and learning new skills that help me grow professionally.</p>
-    </section>
 
-    <!-- Skills -->
-    <section class="skills-section">
-      <h2 class="section-title">Skills</h2>
       <div class="skills">
         <div class="skill">
           <h3>Video Editing</h3>
@@ -144,17 +121,17 @@
       </div>
     </section>
 
-    <!-- Portfolio -->
+    <!-- Portfolio Section -->
     <section id="portfolio">
       <h2 class="section-title">Portfolio</h2>
       <div class="projects">
-        <div class="project-card" onclick="openModal(this)"><img src="JUST.jpg" alt="Project"><h4>Project 1</h4></div>
-        <div class="project-card" onclick="openModal(this)"><img src="Calculator.jpg" alt="Project"><h4>Project 2</h4></div>
-        <div class="project-card" onclick="openModal(this)"><img src="To-Do List.jpg" alt="Project"><h4>Project 3</h4></div>
+        <div class="project-card" onclick="openModal(this)"><img src="JUST.jpg"><h4>Project 1</h4></div>
+        <div class="project-card" onclick="openModal(this)"><img src="Calculator.jpg"><h4>Project 2</h4></div>
+        <div class="project-card" onclick="openModal(this)"><img src="To-Do List.jpg"><h4>Project 3</h4></div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact Section -->
     <section id="contact">
       <h2 class="section-title">Contact</h2>
       <form class="contact-form" action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
@@ -181,11 +158,33 @@
   <div id="modal" onclick="closeModal()"><span>&times;</span><img id="modalImg"></div>
 
   <script>
+    // Modal
     function openModal(element){
       document.getElementById("modalImg").src = element.querySelector('img').src;
       document.getElementById("modal").style.display = "flex";
     }
     function closeModal(){document.getElementById("modal").style.display="none";}
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".sidebar a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if(scrollY >= sectionTop - 60){ current = section.getAttribute("id"); }
+      });
+      navLinks.forEach(link => { link.classList.remove("active"); if(link.getAttribute("href") === "#" + current) link.classList.add("active"); });
+    });
+
+    // Animate skill bars
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(()=>{bar.style.width = width;}, 500);
+      });
+    });
   </script>
 
 </body>
