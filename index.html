@@ -1,256 +1,904 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Zainab Tehreem - Coding Portfolio</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zainab Tehreem - Coding Portfolio</title>
-  <link rel="icon" href="zzz.png" type="image/png">
+  <meta name="description" content="Portfolio of Zainab Tehreem, a 13-year-old coder showcasing 20 web-based projects including ChatGPT, WhatsApp, and Airbnb clones.">
+  <meta name="keywords" content="Zainab Tehreem, coding portfolio, web development, young coder, JavaScript, Python">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="icon" href="zzz.png" type="image/png">
 
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family:'Poppins',sans-serif; background:#f9f9f9; color:#333; line-height:1.6;}
-    a {text-decoration:none;}
-    header {position:fixed; width:100%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); z-index:1000;}
-    .container {max-width:1200px; margin:0 auto; padding:0 20px;}
-    .nav-container {display:flex; justify-content:space-between; align-items:center; padding:15px 0;}
-    .logo {display:flex; align-items:center;}
-    .logo-text {font-size:24px; font-weight:700; color:#2563eb; margin-left:10px;}
-    .nav-menu {display:flex; list-style:none;}
-    .nav-menu li {margin-left:30px;}
-    .nav-menu a {color:#333; font-weight:500; position:relative; transition:color 0.3s;}
-    .nav-menu a:hover {color:#2563eb;}
-    .nav-menu a::after {content:''; position:absolute; bottom:-5px; left:0; width:0; height:2px; background:#2563eb; transition:width 0.3s;}
-    .nav-menu a:hover::after {width:100%;}
-    .hero {padding:150px 0 100px; text-align:center; background:linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);}
-    .hero-img {width:200px; height:200px; border-radius:50%; border:5px solid #fff; margin:0 auto 30px; display:block; object-fit:cover;}
-    .hero h1 {font-size:3rem; color:#1e293b; margin-bottom:20px;}
-    .hero p {font-size:1.3rem; color:#4b5563; margin-bottom:30px;}
-    .btn {padding:12px 30px; background:#2563eb; color:#fff; border:none; border-radius:5px; cursor:pointer; transition:0.3s;}
-    .btn:hover {background:#1d4ed8;}
-    section {padding:80px 0;}
-    .section-title {text-align:center; margin-bottom:50px;}
-    .section-title h2 {font-size:2.5rem; position:relative; display:inline-block; color:#1e293b; padding-bottom:15px;}
-    .section-title h2::after {content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:80px; height:4px; background:#2563eb; border-radius:2px;}
-    
-    /* About */
-    .about-content {display:flex; align-items:center; gap:50px; flex-wrap:wrap;}
-    .about-img img {max-width:100%; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
-    
-    /* Skills */
-    .skills-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
-    .skill {background:#fff; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-    .skill-bar {height:10px; background:#e5e7eb; border-radius:5px; margin-bottom:10px; overflow:hidden;}
-    .skill-progress {height:100%; border-radius:5px; background:linear-gradient(90deg,#2563eb,#3b82f6); position:relative;}
-    .skill-progress span {position:absolute; right:10px; top:-25px; font-weight:600; color:#2563eb;}
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-left: 10px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-menu li {
+      margin-left: 30px;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-menu a:hover {
+      color: #2563eb;
+    }
+
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #2563eb;
+      transition: width 0.3s;
+    }
+
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 150px 0 100px;
+      background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .hero-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin: 0 auto 30px;
+      display: block;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: #1e293b;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #2563eb;
+      border-radius: 2px;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .about-img img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Skills Section */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .skill {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .skill-bar {
+      height: 10px;
+      background: #e5e7eb;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .skill-progress {
+      height: 100%;
+      border-radius: 5px;
+      background: linear-gradient(90deg, #2563eb, #3b82f6);
+      position: relative;
+    }
+
+    .skill-progress span {
+      position: absolute;
+      right: 10px;
+      top: -25px;
+      font-weight: 600;
+      color: #2563eb;
+    }
+
     /* Coding Languages */
-    .languages-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:30px; text-align:center;}
-    .language-item {background:#fff; padding:30px 20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05); transition:0.3s;}
-    .language-item:hover {transform:translateY(-5px);}
-    .language-item i {font-size:3rem; color:#2563eb; margin-bottom:15px;}
-    
-    /* Stats */
-    .stats {background:linear-gradient(135deg,#2563eb 0%,#3b82f6 100%); color:#fff; padding:80px 0;}
-    .stats-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px; text-align:center;}
-    .stat-number {font-size:3rem; font-weight:700; margin-bottom:10px;}
-    
-    /* Portfolio */
-    .portfolio-filters {text-align:center; margin-bottom:30px;}
-    .portfolio-filters button {margin:5px; padding:8px 18px; border:none; border-radius:5px; background:#2563eb; color:#fff; cursor:pointer; transition:0.3s;}
-    .portfolio-filters button:hover {background:#1d4ed8;}
-    
-    .portfolio-grid {display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px;}
-    .portfolio-item {position:relative; border-radius:10px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.1); height:200px; cursor:pointer;}
-    .portfolio-item img {width:100%; height:100%; object-fit:cover; transition:transform 0.5s;}
-    .portfolio-item:hover img {transform:scale(1.1);}
-    .portfolio-item-overlay {position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(37,99,235,0.8); display:flex; flex-direction:column; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; padding:20px; text-align:center;}
-    .portfolio-item:hover .portfolio-item-overlay {opacity:1;}
-    .portfolio-item-overlay h3 {color:#fff; font-size:1.2rem; margin-bottom:10px;}
-    .portfolio-item-overlay p {color:#e0f2fe; font-size:0.9rem;}
-    
-    /* Contact */
-    .contact-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:50px;}
-    .contact-info, .contact-form {background:#fff; padding:30px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-    .contact-detail {display:flex; align-items:center; margin-bottom:20px;}
-    .contact-detail i {font-size:1.5rem; color:#2563eb; margin-right:15px;}
-    
+    .languages {
+      background: #f8fafc;
+      padding: 60px 0;
+    }
+
+    .languages-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .language-item {
+      background: #fff;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .language-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .language-item i {
+      font-size: 3rem;
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    /* Stats Section */
+    .stats {
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 30px;
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      height: 250px;
+      cursor: pointer;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .portfolio-item-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(37, 99, 235, 0.8);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .portfolio-item:hover .portfolio-item-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-item-overlay h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .portfolio-item-overlay p {
+      color: #e0f2fe;
+      font-size: 0.9rem;
+    }
+
+    .portfolio-item-overlay a {
+      margin-top: 10px;
+      padding: 8px 20px;
+      background: #fff;
+      color: #2563eb;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .portfolio-item-overlay a:hover {
+      background: #e0f2fe;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+    }
+
+    .contact-info {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #1e293b;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .contact-detail i {
+      font-size: 1.5rem;
+      color: #2563eb;
+      margin-right: 15px;
+    }
+
+    .contact-form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid #d1d5db;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #2563eb;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
     /* Footer */
-    footer {background:#1e293b; color:#fff; padding:50px 0 20px;}
-    .footer-container {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:40px; margin-bottom:40px;}
-    .social-icons {display:flex; gap:15px;}
-    .social-icons a {width:40px; height:40px; background:#374151; display:flex; align-items:center; justify-content:center; border-radius:50%; color:#fff; transition:0.3s;}
-    .social-icons a:hover {background:#2563eb;}
-    .copyright {text-align:center; padding-top:20px; border-top:1px solid #374151;}
-    
-    @media (max-width:768px){.nav-menu{display:none;}.hero h1{font-size:2rem;}.hero p{font-size:1rem;}.about-content{flex-direction:column;}}
+    footer {
+      background: #1e293b;
+      color: #fff;
+      padding: 50px 0 20px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-about h3,
+    .footer-links h3,
+    .footer-social h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-about h3::after,
+    .footer-links h3::after,
+    .footer-social h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: #2563eb;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: #e5e7eb;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #2563eb;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #374151;
+      color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: #2563eb;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #374151;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="container nav-container">
-    <div class="logo">
-      <img src="zzz.png" width="40" alt="Logo">
-      <span class="logo-text">Zainab Tehreem</span>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="zzz.png" alt="Zainab Tehreem Logo" width="40">
+        <span class="logo-text">Zainab Tehreem</span>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-    <ul class="nav-menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
-</header>
+  </header>
 
-<!-- Hero -->
-<section class="hero" id="home">
-  <div class="container">
-    <img src="zzz.png" alt="Zainab Tehreem" class="hero-img">
-    <h1>Zainab Tehreem Justicewali</h1>
-    <p>Young Coder & Programming Enthusiast</p>
-    <a href="#contact" class="btn">Get In Touch</a>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <div class="section-title"><h2>About Me</h2></div>
-    <div class="about-content">
-      <div class="about-text">
-        <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
-        <p>My journey in programming started when I was 10, and since then I've been constantly expanding my knowledge and skills in various programming languages and technologies.</p>
-      </div>
-      <div class="about-img">
-        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coding Image">
-      </div>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <img src="zzz.png" alt="Zainab Tehreem Profile" class="hero-img">
+      <h1>Zainab Tehreem Justicewali</h1>
+      <p>Young Coder & Programming Enthusiast</p>
+      <a href="#contact" class="btn">Get In Touch</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Skills -->
-<section id="skills">
-  <div class="container">
-    <div class="section-title"><h2>My Skills</h2></div>
-    <div class="skills-container">
-      <div class="skill">
-        <h3>Web Development</h3>
-        <div class="skill-bar"><div class="skill-progress" style="width:85%"><span>85%</span></div></div>
-        <p>Building responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
       </div>
-      <div class="skill">
-        <h3>Python Programming</h3>
-        <div class="skill-bar"><div class="skill-progress" style="width:80%"><span>80%</span></div></div>
-        <p>Creating applications and solving problems using Python programming language.</p>
-      </div>
-      <div class="skill">
-        <h3>Problem Solving</h3>
-        <div class="skill-bar"><div class="skill-progress" style="width:90%"><span>90%</span></div></div>
-        <p>Analyzing problems and developing efficient algorithmic solutions.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Portfolio -->
-<section id="portfolio">
-  <div class="container">
-    <div class="section-title"><h2>My Projects</h2></div>
-    
-    <div class="portfolio-filters">
-      <button onclick="filterProjects('all')">All</button>
-      <button onclick="filterProjects('functional')">Functional</button>
-      <button onclick="filterProjects('non-functional')">Non-Functional</button>
-    </div>
-    
-    <div class="portfolio-grid">
-      <!-- Example project -->
-      <div class="portfolio-item functional">
-        <img src="project-img/chatgpt.png" alt="ChatGPT Clone">
-        <div class="portfolio-item-overlay">
-          <h3>ChatGPT Clone</h3>
-          <p>Functional | 3 Days | Web-Based</p>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
+          <p>My journey in programming started when I was 10, and since then I've been constantly expanding my knowledge and skills in various programming languages and technologies.</p>
+          <p>I believe that coding is a superpower that allows me to bring my ideas to life and create solutions that can help people.</p>
         </div>
-      </div>
-      <div class="portfolio-item non-functional">
-        <img src="project-img/whatsapp.png" alt="WhatsApp Clone">
-        <div class="portfolio-item-overlay">
-          <h3>WhatsApp Clone</h3>
-          <p>Non-Functional | 1 Hour | Web-Based</p>
-        </div>
-      </div>
-      <!-- Repeat similarly for all 20 projects -->
-    </div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title"><h2>Contact Me</h2></div>
-    <div class="contact-container">
-      <div class="contact-info">
-        <h3>Get In Touch</h3>
-        <div class="contact-detail"><i class="fas fa-envelope"></i> mishikhan78692@gmail.com</div>
-        <p>Feel free to reach out to me for collaboration or any questions. I'm always open to discussing new projects and opportunities.</p>
-      </div>
-      <div class="contact-form">
-        <h3>Send Message</h3>
-        <form action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
-          <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
-          <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
-          <div class="form-group"><label>Message</label><textarea name="message" rows="5" required></textarea></div>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="footer-container">
-      <div><h3>About Me</h3><p>Passionate young coder with a drive to create innovative solutions and applications.</p></div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Connect With Me</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/zain_abtehreem/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/zainab-tehreem/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Coding Illustration">
         </div>
       </div>
     </div>
-    <div class="copyright">
-      &copy; 2025 Zainab Tehreem. All rights reserved.
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script>
-  function filterProjects(type) {
-    const projects = document.querySelectorAll('.portfolio-item');
-    projects.forEach(project => {
-      if(type === 'all') project.style.display = 'block';
-      else if(project.classList.contains(type)) project.style.display = 'block';
-      else project.style.display = 'none';
+  <!-- Coding Languages -->
+  <section id="languages" class="languages">
+    <div class="container">
+      <div class="section-title">
+        <h2>Coding Languages</h2>
+      </div>
+      <div class="languages-container">
+        <div class="language-item">
+          <i class="fab fa-html5"></i>
+          <h3>HTML</h3>
+        </div>
+        <div class="language-item">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS</h3>
+        </div>
+        <div class="language-item">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+        </div>
+        <div class="language-item">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Coding Skills</h2>
+      </div>
+      <div class="skills-container">
+        <div class="skill">
+          <h3>Web Development</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%"><span>85%</span></div>
+          </div>
+          <p>Building responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="skill">
+          <h3>Python Programming</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%"><span>80%</span></div>
+          </div>
+          <p>Creating applications and solving problems using Python programming language.</p>
+        </div>
+        <div class="skill">
+          <h3>Problem Solving</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 90%"><span>90%</span></div>
+          </div>
+          <p>Analyzing problems and developing efficient algorithmic solutions.</p>
+        </div>
+        <div class="skill">
+          <h3>Game Development</h3>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%"><span>75%</span></div>
+          </div>
+          <p>Creating interactive games using Python and JavaScript game libraries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-number">4+</div>
+          <div>Partners</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">20</div>
+          <div>Projects Done</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">5+</div>
+          <div>Positive Feedback</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-number">24+</div>
+          <div>Meetings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-title">
+        <h2>My Coding Projects</h2>
+      </div>
+      <div class="portfolio-grid">
+        <!-- ChatGPT Functional Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=ChatGPT+Clone" alt="Screenshot of ChatGPT Functional Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>ChatGPT Functional Clone</h3>
+            <p>A web-based AI chatbot interface. (CWI Task 33, 3 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- WhatsApp Functional Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=WhatsApp+Clone" alt="Screenshot of WhatsApp Functional Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>WhatsApp Functional Clone</h3>
+            <p>A messaging app interface with chat features. (CWI Task 32, 3 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- Airbnb Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=Airbnb+Clone" alt="Screenshot of Airbnb Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>Airbnb Clone</h3>
+            <p>A booking platform UI with search functionality. (CWI Task 37, 3 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- CNN Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=CNN+Clone" alt="Screenshot of CNN Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>CNN Clone</h3>
+            <p>A news website clone with dynamic content. (CWI Task 28, 3 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- IQ Test Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=IQ+Test" alt="Screenshot of IQ Test" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>IQ Test</h3>
+            <p>An interactive web-based IQ test. (CWI Task 42, 2 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- MTurk Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=MTurk+Clone" alt="Screenshot of MTurk Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>MTurk Clone</h3>
+            <p>A crowdsourcing platform for task management. (CWI Task 43, 2 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- ChatGPT Non-Functional Clone -->
+        <div class="portfolio-item" data-category="non-functional">
+          <img src="https://via.placeholder.com/300x250?text=ChatGPT+Non-Functional" alt="Screenshot of ChatGPT Non-Functional Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>ChatGPT Non-F-Functional Clone</h3>
+            <p>A static AI chatbot UI prototype. (CWI Task 26, 1 Hour)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- WhatsApp Non-Functional Clone -->
+        <div class="portfolio-item" data-category="non-functional">
+          <img src="https://via.placeholder.com/300x250?text=WhatsApp+Non-Functional" alt="Screenshot of WhatsApp Non-Functional Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>WhatsApp Non-F-Functional Clone</h3>
+            <p>A static messaging app UI prototype. (CWI Task 27, 1 Hour)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+        <!-- Blogger.com Clone -->
+        <div class="portfolio-item" data-category="functional">
+          <img src="https://via.placeholder.com/300x250?text=Blogger+Clone" alt="Screenshot of Blogger.com Clone" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <h3>Blogger.com Clone</h3>
+            <p>A functional blogging platform UI. (CWI Task 29, 3 Days)</p>
+            <a href="#" class="btn">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <p>Showing 9 of 20 projects. View the full list on <a href="https://github.com/yourusername" target="_blank" style="color: #2563eb;">GitHub</a>.</p>
+        <a href="https://github.com/yourusername" target="_blank" class="btn">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>get in touch</h3>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <div>mishikhan78692@gmail.com</div>
+          </div>
+          <p>Feel free to reach out to me for collaboration or any questions. I'm always open to discussing new projects and opportunities.</p>
+        </div>
+        <div class="contact-form">
+          <h3>Send Message</h3>
+          <form action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About Me</h3>
+          <p>A passionate young coder with a drive to create innovative solutions and applications.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h3>Connect With Me</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/zain_abtehreem/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p id="copyright">© 2025 Zainab Tehreem Portfolio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
-  }
-</script>
 
+    // Toggle mobile menu
+    function toggleMenu() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+    }
+
+    // Dynamic copyright year
+    document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Zainab Tehreem Portfolio. All rights reserved.`;
+  </script>
 </body>
 </html>
- 
