@@ -1,3 +1,8 @@
+# Professional Portfolio with 20 Projects Showcase
+
+I've created a complete portfolio that highlights your 20 projects in an organized, professional manner. The design is clean, modern, and focuses on showcasing your coding abilities and project accomplishments.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -337,6 +342,88 @@
       color: #e0f2fe;
     }
     
+    /* Project Categories */
+    .categories {
+      margin: 40px 0;
+      text-align: center;
+    }
+    
+    .category-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 0 10px 10px 0;
+      background: #e6f0ff;
+      color: #2563eb;
+      border: none;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .category-btn.active, .category-btn:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+    
+    /* Project Details Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+    }
+    
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+    }
+    
+    .close-modal:hover {
+      color: #000;
+    }
+    
+    .modal-header {
+      margin-bottom: 20px;
+    }
+    
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    
+    .modal-image {
+      width: 100%;
+      border-radius: 10px;
+    }
+    
+    .modal-details h4 {
+      margin: 15px 0 5px;
+      color: #2563eb;
+    }
+    
     /* Contact Section */
     .contact-container {
       display: grid;
@@ -520,6 +607,10 @@
       .section-title h2 {
         font-size: 2rem;
       }
+      
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -549,7 +640,7 @@
       <img src="zzz.png" alt="Zainab Tehreem" class="hero-img">
       <h1>Zainab Tehreem Justicewali</h1>
       <p>Young Coder & Programming Enthusiast</p>
-      <a href="#contact" class="btn">Get In Touch</a>
+      <a href="#portfolio" class="btn">View My Projects</a>
     </div>
   </section>
 
@@ -658,7 +749,7 @@
         </div>
         
         <div class="stat-box">
-          <div class="stat-number">24</div>
+          <div class="stat-number">20</div>
           <div>Projects Done</div>
         </div>
         
@@ -682,160 +773,14 @@
         <h2>My Coding Projects</h2>
       </div>
       
+      <div class="categories">
+        <button class="category-btn active" data-category="all">All Projects</button>
+        <button class="category-btn" data-category="web">Web Development</button>
+        <button class="category-btn" data-category="clone">Website Clones</button>
+        <button class="category-btn" data-category="app">Applications</button>
+      </div>
+      
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
-          <div class="portfolio-item-overlay">
-            <h3>Tic-Tac-Toe Game</h3>
-            <p>A responsive web game built with HTML, CSS, and JavaScript</p>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
-          <div class="portfolio-item-overlay">
-            <h3>Calculator App</h3>
-            <p>A functional calculator with modern UI design</p>
-          </div>
-        </div>
-        
-        <div class="portfolio-item">
-          <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Coding Project">
-          <div class="portfolio-item-overlay">
-            <h3>To-Do List App</h3>
-            <p>A task management application with local storage</p>
-          </div>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="#" class="btn">View All Projects</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact Me</h2>
-      </div>
-      
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          
-          <div class="contact-detail">
-            <i class="fas fa-envelope"></i>
-            <div>mishikhan78692@gmail.com</div>
-          </div>
-          
-          <p>Feel free to reach out to me for collaboration or any questions. I'm always open to discussing new projects and opportunities.</p>
-        </div>
-        
-        <div class="contact-form">
-          <h3>Send Message</h3>
-          <form action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h3>About Me</h3>
-          <p>A passionate young coder with a drive to create innovative solutions and applications.</p>
-        </div>
-        
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-social">
-          <h3>Connect With Me</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/zain.abtehreem/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="copyright">
-        <p>© 2024 Zainab Tehreem Portfolio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Highlight active navigation link on scroll
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-menu a');
-      
-      let currentSection = '';
-      
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - 100) {
-          currentSection = section.getAttribute('id');
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSection}`) {
-          link.classList.add('active');
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+        <!-- Project 1 -->
+        <div class="portfolio-item" data-category="clone" data-project="1">
+          <img src="https://images.unsplash.com/photo-165572153
