@@ -3,316 +3,422 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zainab Tehreem - Coding Portfolio</title>
-  <link rel="icon" href="zzz.png" type="image/png">
+  <title>Zainab Tehreem JusticeWali - Portfolio Book 2</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; background: #f9f9f9; }
-
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Header */
-    header { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-    .logo { display: flex; align-items: center; }
-    .logo-text { font-size: 24px; font-weight: 700; color: #2563eb; margin-left: 10px; }
-    .nav-menu { display: flex; list-style: none; }
-    .nav-menu li { margin-left: 30px; }
-    .nav-menu a { text-decoration: none; color: #333; font-weight: 500; position: relative; transition: color 0.3s; }
-    .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #2563eb; transition: width 0.3s; }
-    .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
-    .nav-menu a:hover { color: #2563eb; }
-
-    /* Hero */
-    .hero { padding: 150px 0 100px; background: linear-gradient(135deg,#e6f0ff 0%,#f0f7ff 100%); text-align: center; }
-    .hero h1 { font-size: 3rem; margin-bottom: 20px; color: #1e293b; }
-    .hero p { font-size: 1.5rem; margin-bottom: 30px; color: #4b5563; }
-    .hero-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 0 auto 30px; display: block; }
-    .btn { display: inline-block; padding: 12px 30px; background: #2563eb; color: #fff; border-radius: 5px; font-weight: 500; cursor: pointer; transition: 0.3s; }
-    .btn:hover { background: #1d4ed8; }
-
-    /* Sections */
-    section { padding: 80px 0; }
-    .section-title { text-align: center; margin-bottom: 50px; }
-    .section-title h2 { font-size: 2.5rem; color: #1e293b; display: inline-block; position: relative; padding-bottom: 15px; }
-    .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #2563eb; border-radius: 2px; }
-
-    /* About */
-    .about-content { display: flex; align-items: center; gap: 50px; }
-    .about-text { flex: 1; }
-    .about-img { flex: 1; text-align: center; }
-    .about-img img { max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-
-    /* Skills */
-    .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 30px; margin-top: 50px; }
-    .skill { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .skill h3 { font-size: 1.5rem; margin-bottom: 20px; color: #1e293b; }
-    .skill-bar { height: 10px; background: #e5e7eb; border-radius: 5px; overflow: hidden; margin-bottom: 10px; }
-    .skill-progress { height: 100%; border-radius: 5px; background: linear-gradient(90deg,#2563eb,#3b82f6); position: relative; }
-    .skill-progress span { position: absolute; right: 10px; top: -25px; font-weight: 600; color: #2563eb; }
-
-    /* Coding Languages */
-    .languages { background: #f8fafc; }
-    .languages-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); gap: 30px; text-align: center; }
-    .language-item { background: #fff; padding: 30px 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-    .language-item:hover { transform: translateY(-5px); }
-    .language-item i { font-size: 3rem; color: #2563eb; margin-bottom: 15px; }
-
-    /* Stats */
-    .stats { background: linear-gradient(135deg,#2563eb 0%,#3b82f6 100%); color: #fff; padding: 80px 0; }
-    .stats-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 30px; text-align: center; }
-    .stat-box { padding: 30px; }
-    .stat-number { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
-
-    /* Portfolio */
-    .project-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(250px,1fr)); gap: 20px; }
-    .project-item { border-radius: 10px; overflow: hidden; height: 250px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-    .project-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-    .project-item:hover img { transform: scale(1.1); }
-
-    /* Contact */
-    .contact-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 50px; }
-    .contact-info, .contact-form { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .contact-detail { display: flex; align-items: center; margin-bottom: 20px; }
-    .contact-detail i { font-size: 1.5rem; color: #2563eb; margin-right: 15px; }
-    .form-group { margin-bottom: 20px; }
-    .form-group input, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #d1d5db; border-radius: 5px; }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #2563eb; }
-
-    /* Footer */
-    footer { background: #1e293b; color: #fff; padding: 50px 0 20px; }
-    .footer-container { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 40px; margin-bottom: 40px; }
-    .footer-about h3, .footer-links h3, .footer-social h3 { font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
-    .footer-about h3::after, .footer-links h3::after, .footer-social h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: #2563eb; }
-    .footer-links ul { list-style: none; }
-    .footer-links li { margin-bottom: 10px; }
-    .footer-links a { color: #e5e7eb; text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: #2563eb; }
-    .social-icons { display: flex; gap: 15px; }
-    .social-icons a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #374151; color: #fff; border-radius: 50%; transition: background 0.3s; }
-    .social-icons a:hover { background: #2563eb; }
-    .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #374151; }
-
-    @media(max-width:768px) {
-      .nav-menu { display:none; }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1.2rem; }
-      .about-content { flex-direction: column; }
-      .section-title h2 { font-size: 2rem; }
+    :root {
+      --primary: #FF8C00;
+      --secondary: #FF5F1F;
+      --accent: #FFB74D;
+      --dark: #1A1A2E;
+      --light: #FFF5E6;
+      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 0;
+      text-align: center;
+      background-image: 
+        radial-gradient(circle at 5% 10%, rgba(255, 140, 0, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 95% 10%, rgba(255, 95, 31, 0.05) 0%, transparent 20%),
+        radial-gradient(circle at 50% 90%, rgba(255, 183, 77, 0.05) 0%, transparent 20%);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      padding: 40px 20px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .header-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient);
+      opacity: 0.1;
+      z-index: -1;
+    }
+    
+    .profile {
+      margin-bottom: 20px;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px;
+      background: var(--gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+      margin: 0 auto 15px;
+    }
+    
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--primary);
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    h1 {
+      font-size: 2.2rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    
+    .tagline {
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gradient);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tasks {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+    
+    .task-box {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .task-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--gradient);
+    }
+    
+    .task-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .task-number {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(0, 0, 0, 0.05);
+    }
+    
+    .task-icon {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .task-box h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+    
+    .task-box p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      min-height: 40px;
+    }
+    
+    .task-box a {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--gradient);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+    
+    .task-box a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(255, 140, 0, 0.2);
+    }
+    
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      .tasks {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header>
-    <div class="container nav-container">
-      <div class="logo">
-        <img src="zzz.png" alt="Logo" width="40">
-        <span class="logo-text">Zainab Tehreem</span>
+  <div class="container">
+    <header>
+      <div class="header-bg"></div>
+      <div class="profile">
+        <div class="profile-img">
+          <i class="fas fa-film"></i>
+        </div>
+        <h2>Video Editor & Social Media Content Creator</h2>
+        <h1>Zainab Tehreem JusticeWali</h1>
+        <p class="tagline">Crafting compelling visual stories through editing and creative content</p>
       </div>
-      <ul class="nav-menu">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
+      
+      <div class="social-links">
+        <a href="https://www.youtube.com/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/zain.abtehreem" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@yourprofile" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <img src="zzz.png" alt="Zainab Tehreem" class="hero-img">
-      <h1>Zainab Tehreem Justicewali</h1>
-      <p>Young Coder & Programming Enthusiast</p>
-      <a href="#contact" class="btn">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="section-title"><h2>About Me</h2></div>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Hello, I am Zainab Tehreem, a 13-year-old passionate learner who loves coding. I enjoy solving problems, creating new things, and learning skills that will help me in the future.</p>
-          <p>My journey in programming started when I was 10, and since then I've been constantly expanding my knowledge and skills in various programming languages and technologies.</p>
-          <p>I believe that coding is a superpower that allows me to bring my ideas to life and create solutions that can help people.</p>
+    <main>
+      <h2>Coding Book 2 – Advanced Web Development Portfolio</h2>
+      
+      <div class="tasks">
+        <!-- Task boxes with meaningful icons -->
+        <div class="task-box">
+          <div class="task-number">01</div>
+          <div class="task-icon"><i class="fas fa-robot"></i></div>
+          <h3>ChatGPT Clone (Non-Functional)</h3>
+          <p>UI replica of ChatGPT interface</p>
+          <a href="https://zainab-bot-del.github.io/ChatGPT-Clone-Non-Functional-/" target="_blank">View Project</a>
         </div>
-        <div class="about-img">
-          <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80" alt="Coding Image">
+
+        <div class="task-box">
+          <div class="task-number">02</div>
+          <div class="task-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp Clone (Non-Functional)</h3>
+          <p>UI replica of WhatsApp</p>
+          <a href="https://zainab-bot-del.github.io/whatsapp-clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">03</div>
+          <div class="task-icon"><i class="fas fa-newspaper"></i></div>
+          <h3>CNN Clone (Functional)</h3>
+          <p>Functional news website clone</p>
+          <a href="https://zainab-bot-del.github.io/CNN-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">04</div>
+          <div class="task-icon"><i class="fas fa-blog"></i></div>
+          <h3>Blogger.com Clone (Functional)</h3>
+          <p>Blogging platform clone</p>
+          <a href="https://zainab-bot-del.github.io/BLOGGER.COM/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">05</div>
+          <div class="task-icon"><i class="fab fa-twitter"></i></div>
+          <h3>Twitter Clone (Functional)</h3>
+          <p>Functional Twitter/X clone</p>
+          <a href="https://zainab-bot-del.github.io/Twitter-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">06</div>
+          <div class="task-icon"><i class="fas fa-globe"></i></div>
+          <h3>GoDaddy Clone (Functional)</h3>
+          <p>Domain hosting website clone</p>
+          <a href="https://zainab-bot-del.github.io/GoDaddy-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">07</div>
+          <div class="task-icon"><i class="fab fa-whatsapp"></i></div>
+          <h3>WhatsApp Functional Clone</h3>
+          <p>Functional messaging app clone</p>
+          <a href="https://zainab-bot-del.github.io/WhatsApp-Functional-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">08</div>
+          <div class="task-icon"><i class="fas fa-robot"></i></div>
+          <h3>ChatGPT Functional Clone</h3>
+          <p>Functional AI chat interface</p>
+          <a href="https://zainab-bot-del.github.io/ChatGPT--Functional-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">09</div>
+          <div class="task-icon"><i class="fas fa-shipping-fast"></i></div>
+          <h3>DHL Clone (Functional)</h3>
+          <p>Shipping company website clone</p>
+          <a href="https://zainab-bot-del.github.io/Dhl-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">10</div>
+          <div class="task-icon"><i class="fas fa-hotel"></i></div>
+          <h3>Hotels.com Clone (Functional)</h3>
+          <p>Hotel booking website clone</p>
+          <a href="https://zainab-bot-del.github.io/Hotels.com-Clone/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">11</div>
+          <div class="task-icon"><i class="fas fa-car"></i></div>
+          <h3>RentACar.com Clone (Functional)</h3>
+          <p>Car rental service clone</p>
+          <a href="https://zainab-bot-del.github.io/RENTACAR.COM-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">12</div>
+          <div class="task-icon"><i class="fas fa-bed"></i></div>
+          <h3>Airbnb Clone (Functional)</h3>
+          <p>Vacation rental platform clone</p>
+          <a href="https://zainab-bot-del.github.io/AIRBNB-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">13</div>
+          <div class="task-icon"><i class="fas fa-hotel"></i></div>
+          <h3>Sheraton Hotels Clone</h3>
+          <p>Hotel chain website clone</p>
+          <a href="https://zainab-bot-del.github.io/SHERATON-HOTELS--CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">14</div>
+          <div class="task-icon"><i class="fas fa-hotel"></i></div>
+          <h3>Hilton Hotels Clone</h3>
+          <p>Hotel chain website clone</p>
+          <a href="https://zainab-bot-del.github.io/HILTON-HOTELS-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">15</div>
+          <div class="task-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Calendly.com Clone</h3>
+          <p>Scheduling platform clone</p>
+          <a href="https://zainab-bot-del.github.io/CALENDLY.COM-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">16</div>
+          <div class="task-icon"><i class="fas fa-brain"></i></div>
+          <h3>EQ Test (Functional)</h3>
+          <p>Emotional intelligence assessment</p>
+          <a href="https://zainab-bot-del.github.io/EQ-TEST-/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">17</div>
+          <div class="task-icon"><i class="fas fa-brain"></i></div>
+          <h3>IQ Test (Functional)</h3>
+          <p>Intelligence quotient assessment</p>
+          <a href="https://zainab-bot-del.github.io/IQ-TEST/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">18</div>
+          <div class="task-icon"><i class="fas fa-tasks"></i></div>
+          <h3>MTurk.com Clone (Functional)</h3>
+          <p>Crowdsourcing platform clone</p>
+          <a href="https://zainab-bot-del.github.io/MTURK.COM-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">19</div>
+          <div class="task-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>RehanSchool.net Clone (Functional)</h3>
+          <p>Educational platform clone</p>
+          <a href="https://zainab-bot-del.github.io/REHANSCHOOL.NET-CLONE/" target="_blank">View Project</a>
+        </div>
+
+        <div class="task-box">
+          <div class="task-number">20</div>
+          <div class="task-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Rehan.Education Clone (Functional)</h3>
+          <p>Educational website clone</p>
+          <a href="https://zainab-bot-del.github.io/REHAN.EDUCATION-CLONE/" target="_blank">View Project</a>
         </div>
       </div>
-    </div>
-  </section>
+    </main>
 
-  <!-- Languages -->
-  <section class="languages">
-    <div class="container">
-      <div class="section-title"><h2>Coding Languages</h2></div>
-      <div class="languages-container">
-        <div class="language-item"><i class="fab fa-html5"></i><h3>HTML</h3></div>
-        <div class="language-item"><i class="fab fa-css3-alt"></i><h3>CSS</h3></div>
-        <div class="language-item"><i class="fab fa-js"></i><h3>JavaScript</h3></div>
-        <div class="language-item"><i class="fab fa-python"></i><h3>Python</h3></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-title"><h2>My Coding Skills</h2></div>
-      <div class="skills-container">
-        <div class="skill">
-          <h3>Web Development</h3>
-          <div class="skill-bar"><div class="skill-progress" style="width:85%"><span>85%</span></div></div>
-          <p>Building responsive and interactive websites using HTML, CSS, and JavaScript.</p>
-        </div>
-        <div class="skill">
-          <h3>Python Programming</h3>
-          <div class="skill-bar"><div class="skill-progress" style="width:80%"><span>80%</span></div></div>
-          <p>Creating applications and solving problems using Python programming language.</p>
-        </div>
-        <div class="skill">
-          <h3>Problem Solving</h3>
-          <div class="skill-bar"><div class="skill-progress" style="width:90%"><span>90%</span></div></div>
-          <p>Analyzing problems and developing efficient algorithmic solutions.</p>
-        </div>
-        <div class="skill">
-          <h3>Game Development</h3>
-          <div class="skill-bar"><div class="skill-progress" style="width:75%"><span>75%</span></div></div>
-          <p>Creating interactive games using Python and JavaScript game libraries.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-container">
-        <div class="stat-box"><div class="stat-number">4+</div><div>Partners</div></div>
-        <div class="stat-box"><div class="stat-number">20</div><div>Projects Done</div></div>
-        <div class="stat-box"><div class="stat-number">0</div><div>Happy Clients</div></div>
-        <div class="stat-box"><div class="stat-number">24+</div><div>Meetings</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio">
-    <div class="container">
-      <div class="section-title"><h2>Projects</h2></div>
-      <div class="project-grid">
-        <div class="project-item"><img src="bts.jpg" alt="Project 1"></div>
-        <div class="project-item"><img src="exo.jpg" alt="Project 2"></div>
-        <div class="project-item"><img src="kk.jpg" alt="Project 3"></div>
-        <div class="project-item"><img src="ss.jpg" alt="Project 4"></div>
-        <div class="project-item"><img src="tt.jpg" alt="Project 5"></div>
-        <div class="project-item"><img src="ll.jpg" alt="Project 6"></div>
-        <div class="project-item"><img src="ww.jpg" alt="Project 7"></div>
-        <div class="project-item"><img src="mm.jpg" alt="Project 8"></div>
-        <div class="project-item"><img src="ttt.jpg" alt="Project 9"></div>
-        <div class="project-item"><img src="vv.jpg" alt="Project 10"></div>
-        <div class="project-item"><img src="bbb.jpg" alt="Project 11"></div>
-        <div class="project-item"><img src="gg.jpg" alt="Project 12"></div>
-        <div class="project-item"><img src="dd.jpg" alt="Project 13"></div>
-        <div class="project-item"><img src="44.jpg" alt="Project 14"></div>
-        <div class="project-item"><img src="ppp.jpg" alt="Project 15"></div>
-        <div class="project-item"><img src="stay.jpg" alt="Project 16"></div>
-        <div class="project-item"><img src="iq.jpg" alt="Project 17"></div>
-        <div class="project-item"><img src="list.jpg" alt="Project 18"></div>
-        <div class="project-item"><img src="rehan.jpg" alt="Project 19"></div>
-        <div class="project-item"><img src="fas.jpg" alt="Project 20"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-title"><h2>Contact Me</h2></div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <h3>Get In Touch</h3>
-          <div class="contact-detail"><i class="fas fa-envelope"></i><div>mishikhan78692@gmail.com</div></div>
-          <p>Feel free to reach out for collaboration or questions. I'm always open to discussing new projects.</p>
-        </div>
-        <div class="contact-form">
-          <h3>Send Message</h3>
-          <form action="mailto:mishikhan78692@gmail.com" method="post" enctype="text/plain">
-            <div class="form-group"><label for="name">Name</label><input type="text" id="name" name="name" required></div>
-            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-            <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-about">
-          <h3>About Me</h3>
-          <p>A passionate young coder with a drive to create innovative solutions and applications.</p>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-social">
-          <h3>Connect With Me</h3>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/ZainabTehreemJusticeWali/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/zain_abtehreem/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/zainab-tehreem-justice-wali-39b850372" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>© 2025 Zainab Tehreem Portfolio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-      anchor.addEventListener('click', e=>{
-        e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if(target){
-          window.scrollTo({ top: target.offsetTop-80, behavior:'smooth' });
-        }
-      });
-    });
-
-    // Highlight nav
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    window.addEventListener('scroll', ()=>{
-      let current = '';
-      sections.forEach(sec=>{
-        const top = sec.offsetTop-100;
-        if(scrollY >= top) current = sec.getAttribute('id');
-      });
-      navLinks.forEach(link=>{ link.classList.remove('active'); if(link.getAttribute('href') === `#${current}`) link.classList.add('active'); });
-    });
-  </script>
+    <footer>
+      Coding Book 2 – Advanced Web Development Portfolio
+    </footer>
+  </div>
 </body>
 </html>
